@@ -1,6 +1,7 @@
 import { Menu, Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { classNames } from 'lib'
+import Link from 'next/link'
 import { Fragment } from 'react'
 
 const user = {
@@ -9,14 +10,16 @@ const user = {
   imageUrl: '/Avatar.jpeg',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#' },
-  { name: 'Jobs', href: '#' },
-  { name: 'Applicants', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Dashboard', href: '/' },
+  { name: 'Profile', href: '/profile' },
+  { name: 'Settings', href: '/settings' },
+  { name: 'SignUp', href: '/signup' },
+  { name: 'SignIn', href: '/signin' },
 ] as const
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
+  { name: 'Dashboard', href: '/' },
+  { name: 'Your Profile', href: '/profile' },
+  { name: 'Settings', href: '/settings' },
   { name: 'Sign out', href: '#' },
 ] as const
 
@@ -37,13 +40,15 @@ export default function Layout({ children, pageKey }: props) {
             <Popover className="flex h-16 justify-between">
               <div className="flex px-2 lg:px-0">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="#">
+                  <Link href="/">
+                    <a>
                     <img
                       className="h-8 w-auto"
                       src="/logo.png"
                       alt="Workflow"
-                    />
-                  </a>
+                      />
+                    </a>
+                  </Link>
                 </div>
                
               </div>
@@ -165,15 +170,16 @@ export default function Layout({ children, pageKey }: props) {
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
+                            <Link href={item.href}>
                             <a
-                              href={item.href}
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
-                              )}
-                            >
+                                )}
+                                >
                               {item.name}
                             </a>
+                          </Link>
                           )}
                         </Menu.Item>
                       ))}

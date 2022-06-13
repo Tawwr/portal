@@ -21,7 +21,7 @@ export default function SignUp() {
   const [selected, setSelected] = useState(people[0])
 
   return (
-    <Layout pageKey="Jobs">
+    <Layout pageKey="SignUp">
       <div className="h-screen	 bg-white">
         <div className="flex w-full min-h-full">
           <div className="flex flex-1 flex-col items-start justify-start py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-16 w-[45%]">

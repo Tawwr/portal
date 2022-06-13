@@ -4,12 +4,16 @@ import Link from "next/link";
 export default function SignIn() {
   return (
     <>
-      <div className="h-screen	 bg-white">
-        <div className="flex min-h-full">
-          <div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-            <div className="mx-auto w-full max-w-sm lg:w-96">
+      <div className="h-screen	 bg-gray-100">
+        <div className="flex min-h-full items-center justify-center">
+          <div className="w-[750px] flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+            <div className="flex flex-col w-full lg:w-[100%] p-10 rounded-3xl shadow-lg bg-white h-[80vh] justify-center">
               <div>
-                <img className="h-20 w-auto" src="/logo.png" alt="Workflow" />
+                <Link href='/'>
+                  <a>
+                    <img className="h-20 w-auto" src="/logo.png" alt="Workflow" />
+                  </a>
+                </Link>
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
                   Sign in to your account
                 </h2>
@@ -138,13 +142,7 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          <div className="relative hidden w-0 flex-1 lg:block">
-            <img
-              className="absolute inset-0 h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1483721310020-03333e577078?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHdvcmtvdXR8ZW58MHx8MHx8"
-              alt=""
-            />
-          </div>
+          
         </div>
       </div>
     </>
