@@ -19,44 +19,44 @@ const tabs = [
 ]
 const jobs = [
   {
-    id: '81614',
-    author: {
-      name: 'Software Engineer - Platform for Film Industry',
+    id: '8161',
+    name: 'Software Engineer - Platform for Film Industry',
+    company: {
+      id: '81612',
       imageUrl:
         'https://cardea.imgix.net/media/companies/logos/rycsyng5xax7h7yiyovr?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2',
-      href: '#',
+      name: 'Assemble',
     },
-    company: 'Assemble',
   },
   {
-    id: '81614',
-    author: {
-      name: 'Senior Software Engineer',
+    id: '1614',
+    name: 'Senior Software Engineer',
+    company: {
+      id: '16142',
       imageUrl:
         'https://cardea.imgix.net/media/companies/logos/jxfjjasfjkpbrng4m9id?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2',
-      href: '#',
+      name: 'Milo',
     },
-    company: 'Milo',
   },
   {
-    id: '81614',
-    author: {
-      name: 'Software Engineer - Backend',
+    id: '8114',
+    name: 'Software Engineer - Backend',
+    company: {
+      id: '81142',
       imageUrl:
         'https://cardea.imgix.net/media/companies/logos/v4ju9e8pbgqaep43l6wq.png?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2',
-      href: '#',
+      name: 'Miami Heat',
     },
-    company: 'Miami Heat',
   },
   {
-    id: '81614',
-    author: {
-      name: 'Junior Frontend Engineer',
+    id: '614',
+    name: 'Junior Frontend Engineer',
+    company: {
+      id: '6142',
       imageUrl:
         'https://cardea.imgix.net/media/companies/logos/yd8cjuptskvbcxko0ag7_bOX49LP.png?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2',
-      href: '#',
+      name: 'Hoppin',
     },
-    company: 'Hoppin',
   },
 ]
 export default function Example() {
@@ -86,7 +86,7 @@ export default function Example() {
 
 const JobList = () => {
   return (
-    <main className="hidden xl:block xl:col-span-3">
+    <main className="hidden xl:col-span-3 xl:block">
       <div className="px-0">
         <div className="block">
           <nav
@@ -126,7 +126,7 @@ const JobList = () => {
           {jobs.map((job) => (
             <li
               key={job.id}
-              className="bg-white px-4 py-6 shadow rounded-lg p-6"
+              className="rounded-lg bg-white p-6 px-4 py-6 shadow"
             >
               <article aria-labelledby={'job-title-' + job.id}>
                 <div>
@@ -134,19 +134,19 @@ const JobList = () => {
                     <div className="flex-shrink-0">
                       <img
                         className="h-10 w-10 rounded-full"
-                        src={job.author.imageUrl}
+                        src={job.company.imageUrl}
                         alt=""
                       />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium text-gray-900">
-                        <a href={job.author.href} className="hover:underline">
-                          {job.author.name}
+                        <a href={job.company.id} className="hover:underline">
+                          {job.name}
                         </a>
                       </p>
                       <p className="text-sm text-gray-500">
-                        <a href={job.href} className="hover:underline">
-                          {job.company}
+                        <a href={job.id} className="hover:underline">
+                          {job.company.name}
                         </a>
                       </p>
                     </div>
