@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { store } from 'redux/store'
 import { SWRConfig } from 'swr'
-import '../styles/globals.css'
+import 'styles/globals.css'
 
 const fetcher = async (url: string) =>
   await axios.get(url).then((res) => res.data)

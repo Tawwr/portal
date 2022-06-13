@@ -9,7 +9,7 @@ import {
 
 import { ShareIcon } from '@heroicons/react/outline'
 
-import Layout from 'components/layout'
+import Layout from 'components/layout/layout'
 import { classNames } from 'lib'
 import { Fragment } from 'react'
 
