@@ -34,7 +34,7 @@ type props = {
 export default function Layout({ children, pageKey }: props) {
   return (
     <>
-      <div className="min-h-full">
+      <div className="min-h-screen flex flex-col">
         <header className="bg-white shadow sticky top-0 z-50">
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <Popover className="flex h-16 justify-between">
@@ -191,7 +191,7 @@ export default function Layout({ children, pageKey }: props) {
           </div>
         </header>
 
-        <main className="relative">{children}</main>
+        <main className="relative flex-grow bg-gray-100">{children}</main>
       </div>
     </>
   )

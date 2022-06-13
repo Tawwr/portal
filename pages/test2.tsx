@@ -48,6 +48,7 @@ import {
   UserCircleIcon,
   XIcon,
 } from '@heroicons/react/outline'
+import { classNames } from 'lib'
 
 const user = {
   name: 'Whitney Francis',
@@ -222,9 +223,6 @@ const message = {
   ],
 }
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Example() {
   const [open, setOpen] = useState(false)
