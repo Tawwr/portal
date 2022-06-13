@@ -9,7 +9,11 @@ export default function SignIn() {
           <div className="w-[750px] flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="flex flex-col w-full lg:w-[100%] p-10 rounded-3xl shadow-lg bg-white h-[80vh] justify-center">
               <div>
-                <img className="h-20 w-auto" src="/logo.png" alt="Workflow" />
+                <Link href='/'>
+                  <a>
+                    <img className="h-20 w-auto" src="/logo.png" alt="Workflow" />
+                  </a>
+                </Link>
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
                   Sign in to your account
                 </h2>

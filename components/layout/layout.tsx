@@ -14,6 +14,7 @@ const navigation = [
   { name: 'Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
   { name: 'SignUp', href: '/signup' },
+  { name: 'SignIn', href: '/signin' },
 ] as const
 const userNavigation = [
   { name: 'Dashboard', href: '/' },
@@ -39,13 +40,15 @@ export default function Layout({ children, pageKey }: props) {
             <Popover className="flex h-16 justify-between">
               <div className="flex px-2 lg:px-0">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="#">
+                  <Link href="/">
+                    <a>
                     <img
                       className="h-8 w-auto"
                       src="/logo.png"
                       alt="Workflow"
-                    />
-                  </a>
+                      />
+                    </a>
+                  </Link>
                 </div>
                
               </div>
