@@ -8,10 +8,12 @@ import {
   StarIcon,
   FlagIcon,
   LocationMarkerIcon,
+  ArrowNarrowLeftIcon,
 } from '@heroicons/react/solid'
 import Layout from 'components/layout'
 import { classNames } from 'lib'
-import { Fragment } from 'react'
+import Link from 'next/link'
+import { Dispatch, Fragment, SetStateAction, useState } from 'react'
 
 const tabs = [
   { name: 'Featured', href: '#', current: true },
@@ -60,23 +62,19 @@ const jobs = [
   },
 ]
 export default function Example() {
+  const [selected, setSelected] = useState<'list' | 'detail'>('list')
   return (
     <Layout pageKey="Jobs">
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full bg-gray-100">
         {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}
 
         <div className="py-10">
           <div className="mx-auto max-w-3xl px-6 lg:grid lg:max-w-full lg:grid-cols-12 lg:gap-8 lg:px-8">
-            <JobList />
-            <SelectedJob />
+            <JobList selected={selected === 'list'} setSelected={setSelected} />
+            <SelectedJob
+              selected={selected === 'detail'}
+              setSelected={setSelected}
+            />
           </div>
         </div>
       </div>
@@ -84,9 +82,20 @@ export default function Example() {
   )
 }
 
-const JobList = () => {
+const JobList = ({
+  selected,
+  setSelected,
+}: {
+  selected: boolean
+  setSelected: Dispatch<SetStateAction<'list' | 'detail'>>
+}) => {
   return (
-    <main className="hidden xl:col-span-3 xl:block">
+    <main
+      className={classNames(
+        selected ? 'lg:col-span-12 ' : 'hidden xl:block',
+        'xl:col-span-3'
+      )}
+    >
       <div className="px-0">
         <div className="block">
           <nav
@@ -124,144 +133,150 @@ const JobList = () => {
         <h1 className="sr-only">Recent jobs</h1>
         <ul role="list" className="space-y-4">
           {jobs.map((job) => (
-            <li
-              key={job.id}
-              className="rounded-lg bg-white p-6 px-4 py-6 shadow"
-            >
-              <article aria-labelledby={'job-title-' + job.id}>
-                <div>
-                  <div className="flex space-x-3">
-                    <div className="flex-shrink-0">
-                      <img
-                        className="h-10 w-10 rounded-full"
-                        src={job.company.imageUrl}
-                        alt=""
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900">
-                        <a href={job.company.id} className="hover:underline">
-                          {job.name}
-                        </a>
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        <a href={job.id} className="hover:underline">
-                          {job.company.name}
-                        </a>
-                      </p>
-                    </div>
-                    <div className="flex flex-shrink-0 self-center">
-                      <Menu
-                        as="div"
-                        className="relative inline-block text-left"
-                      >
-                        <div>
-                          <Menu.Button className="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600">
-                            <span className="sr-only">Open options</span>
-                            <StarIcon className="h-5 w-5" aria-hidden="true" />
-                          </Menu.Button>
-                        </div>
-
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
+            <Link href="">
+              <li
+                key={job.id}
+                onClick={() => setSelected('detail')}
+                className="rounded-lg bg-white p-6 px-4 py-6 shadow hover:cursor-pointer "
+              >
+                <article aria-labelledby={'job-title-' + job.id}>
+                  <div>
+                    <div className="flex space-x-3">
+                      <div className="flex-shrink-0">
+                        <img
+                          className="h-10 w-10 rounded-full"
+                          src={job.company.imageUrl}
+                          alt=""
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-medium text-gray-900">
+                          <a href={job.company.id} className="hover:underline">
+                            {job.name}
+                          </a>
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          <a href={job.id} className="hover:underline">
+                            {job.company.name}
+                          </a>
+                        </p>
+                      </div>
+                      <div className="flex flex-shrink-0 self-center">
+                        <Menu
+                          as="div"
+                          className="relative inline-block text-left"
                         >
-                          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            <div className="py-1">
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <a
-                                    href="#"
-                                    className={classNames(
-                                      active
-                                        ? 'bg-gray-100 text-gray-900'
-                                        : 'text-gray-700',
-                                      'flex px-4 py-2 text-sm'
-                                    )}
-                                  >
-                                    <StarIcon
-                                      className="mr-3 h-5 w-5 text-gray-400"
-                                      aria-hidden="true"
-                                    />
-                                    <span>Add to favorites</span>
-                                  </a>
-                                )}
-                              </Menu.Item>
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <a
-                                    href="#"
-                                    className={classNames(
-                                      active
-                                        ? 'bg-gray-100 text-gray-900'
-                                        : 'text-gray-700',
-                                      'flex px-4 py-2 text-sm'
-                                    )}
-                                  >
-                                    <CodeIcon
-                                      className="mr-3 h-5 w-5 text-gray-400"
-                                      aria-hidden="true"
-                                    />
-                                    <span>Embed</span>
-                                  </a>
-                                )}
-                              </Menu.Item>
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <a
-                                    href="#"
-                                    className={classNames(
-                                      active
-                                        ? 'bg-gray-100 text-gray-900'
-                                        : 'text-gray-700',
-                                      'flex px-4 py-2 text-sm'
-                                    )}
-                                  >
-                                    <FlagIcon
-                                      className="mr-3 h-5 w-5 text-gray-400"
-                                      aria-hidden="true"
-                                    />
-                                    <span>Report content</span>
-                                  </a>
-                                )}
-                              </Menu.Item>
-                            </div>
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
+                          <div>
+                            <Menu.Button className="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600">
+                              <span className="sr-only">Open options</span>
+                              <StarIcon
+                                className="h-5 w-5"
+                                aria-hidden="true"
+                              />
+                            </Menu.Button>
+                          </div>
+
+                          <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                          >
+                            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              <div className="py-1">
+                                <Menu.Item>
+                                  {({ active }) => (
+                                    <a
+                                      href="#"
+                                      className={classNames(
+                                        active
+                                          ? 'bg-gray-100 text-gray-900'
+                                          : 'text-gray-700',
+                                        'flex px-4 py-2 text-sm'
+                                      )}
+                                    >
+                                      <StarIcon
+                                        className="mr-3 h-5 w-5 text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span>Add to favorites</span>
+                                    </a>
+                                  )}
+                                </Menu.Item>
+                                <Menu.Item>
+                                  {({ active }) => (
+                                    <a
+                                      href="#"
+                                      className={classNames(
+                                        active
+                                          ? 'bg-gray-100 text-gray-900'
+                                          : 'text-gray-700',
+                                        'flex px-4 py-2 text-sm'
+                                      )}
+                                    >
+                                      <CodeIcon
+                                        className="mr-3 h-5 w-5 text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span>Embed</span>
+                                    </a>
+                                  )}
+                                </Menu.Item>
+                                <Menu.Item>
+                                  {({ active }) => (
+                                    <a
+                                      href="#"
+                                      className={classNames(
+                                        active
+                                          ? 'bg-gray-100 text-gray-900'
+                                          : 'text-gray-700',
+                                        'flex px-4 py-2 text-sm'
+                                      )}
+                                    >
+                                      <FlagIcon
+                                        className="mr-3 h-5 w-5 text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span>Report content</span>
+                                    </a>
+                                  )}
+                                </Menu.Item>
+                              </div>
+                            </Menu.Items>
+                          </Transition>
+                        </Menu>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex flex-col sm:flex-row sm:flex-wrap sm:space-x-1">
+                      <div className="mt-2 flex items-center text-sm text-gray-500">
+                        <BriefcaseIcon
+                          className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        Full-time
+                      </div>
+                      <div className="mt-2 flex items-center text-sm text-gray-500">
+                        <LocationMarkerIcon
+                          className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        Remote
+                      </div>
+                      <div className="mt-2 flex items-center text-sm text-gray-500">
+                        <CurrencyDollarIcon
+                          className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        $120k &ndash; $140k
+                      </div>
                     </div>
                   </div>
-                  <div className="mt-4 flex flex-col sm:flex-row sm:flex-wrap sm:space-x-1">
-                    <div className="mt-2 flex items-center text-sm text-gray-500">
-                      <BriefcaseIcon
-                        className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      Full-time
-                    </div>
-                    <div className="mt-2 flex items-center text-sm text-gray-500">
-                      <LocationMarkerIcon
-                        className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      Remote
-                    </div>
-                    <div className="mt-2 flex items-center text-sm text-gray-500">
-                      <CurrencyDollarIcon
-                        className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      $120k &ndash; $140k
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </li>
+                </article>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -269,7 +284,13 @@ const JobList = () => {
   )
 }
 
-const SelectedJob = () => {
+const SelectedJob = ({
+  selected,
+  setSelected,
+}: {
+  selected: boolean
+  setSelected: Dispatch<SetStateAction<'list' | 'detail'>>
+}) => {
   const job = {
     title: '',
     company: {
@@ -356,7 +377,25 @@ const SelectedJob = () => {
   `,
   }
   return (
-    <aside className="lg:col-span-12 xl:col-span-8">
+    <aside
+      className={classNames(
+        selected ? 'lg:col-span-12 ' : 'hidden xl:block',
+        'xl:col-span-8'
+      )}
+    >
+      <div className="mb-6 flex sm:hidden">
+        <a
+          href="#"
+          className="group inline-flex space-x-3 text-sm font-medium text-gray-500 hover:text-gray-700"
+        >
+          <ArrowNarrowLeftIcon
+            onClick={() => setSelected('list')}
+            className="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-600"
+            aria-hidden="true"
+          />
+          <span>Back to Jobs</span>
+        </a>
+      </div>
       <div className="sticky top-20 space-y-4">
         <section aria-labelledby="who-to-follow-heading">
           <div className="rounded-lg bg-white shadow">
