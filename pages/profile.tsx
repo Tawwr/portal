@@ -1,34 +1,8 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-import {
-    CalendarIcon,
-    CogIcon,
-    HomeIcon,
-    MapIcon,
-    MenuIcon,
-    SearchCircleIcon,
-    SpeakerphoneIcon,
-    UserGroupIcon,
-    ViewGridAddIcon,
-  } from '@heroicons/react/outline'
-  import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
+import {MenuIcon,} from '@heroicons/react/outline'
+import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
 import Layout from 'components/layout/layout'
-  import { classNames } from 'lib'
-  import { useState } from 'react'
+import { classNames } from 'lib'
+import { useState } from 'react'
   
   const tabs = [
     { name: 'Profile', href: '#', current: true },
