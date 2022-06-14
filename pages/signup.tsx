@@ -47,7 +47,7 @@ export default function SignUp() {
 
               <div className="mt-8">
                 <div className="mt-6">
-                  <form action="#" method="POST" className="space-y-6">
+                  <form action="#" method="POST" className="space-y-4">
                     <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                       <div className="col-span-3">
                         <TTextInput
