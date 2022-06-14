@@ -182,7 +182,7 @@ export default function Example() {
                           {field}
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          {profile.fields[field]}
+                          {profile.fields[field as keyof typeof profile.fields]}
                         </dd>
                       </div>
                     ))}

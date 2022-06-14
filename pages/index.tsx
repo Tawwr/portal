@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Menu, Transition } from '@headlessui/react'
 import {
   BriefcaseIcon,
@@ -5,7 +6,7 @@ import {
   CurrencyDollarIcon,
   FlagIcon,
   LocationMarkerIcon,
-  StarIcon
+  StarIcon,
 } from '@heroicons/react/solid'
 import Layout from 'components/layout'
 import { classNames } from 'lib'
@@ -67,9 +68,8 @@ export default function Dashboard() {
                 <h1 className="sr-only">Recent jobs</h1>
                 <ul role="list" className="space-y-4">
                   {jobs.map((job) => (
-                    <Link href="">
+                    <Link key={job.id} href="">
                       <li
-                        key={job.id}
                         // onClick={() => setSelected('detail')}
                         className="rounded-lg bg-white p-6 px-4 py-6 shadow hover:cursor-pointer "
                       >

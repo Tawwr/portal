@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import Layout from 'components/layout'
 import { ListBox } from 'components/listbox'
 import Link from 'next/link'
@@ -332,7 +334,7 @@ export default function SignUp() {
               </ul>
               <span>
                 Fill out the form to apply. You can expect a response within a
-                couple of days. Once accepted, you’ll only be messaged when a
+                couple of days. Once accepted, you'll only be messaged when a
                 company is requesting to speak with you.
               </span>
             </div>
