@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Layout from 'components/layout'
 import { ListBox } from 'components/listbox'
+import TTextInput from 'components/shared/textInput'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -49,41 +50,27 @@ export default function SignUp() {
                   <form action="#" method="POST" className="space-y-6">
                     <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                       <div className="col-span-3">
-                        <label
-                          htmlFor="firstName"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          First Name
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            name="firstName"
-                            id="firstName"
-                            autoComplete="address-level2"
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                            placeholder="James"
-                          />
-                        </div>
+                        <TTextInput
+                          type="text"
+                          name="First Name"
+                          id="firstName"
+                          autoComplete="firstName"
+                          placeholder="James"
+                          required
+                          // error={{ message: 'Please enter your first name' }}
+                        />
                       </div>
 
                       <div className="col-span-3">
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Last Name
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            name="lastName"
-                            id="lastName"
-                            autoComplete="address-level1"
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                            placeholder="Bond"
-                          />
-                        </div>
+                        <TTextInput
+                          type="text"
+                          name="Last Name"
+                          id="lastName"
+                          autoComplete="lastName"
+                          placeholder="Bond"
+                          required
+                          error={{ message: 'Please enter your last name' }}
+                        />
                       </div>
                     </div>
 
