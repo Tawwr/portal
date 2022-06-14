@@ -108,7 +108,7 @@ export const ListBox = () => {
                     key={person.id}
                     className={({ active }) =>
                       classNames(
-                        active ? 'bg-indigo-600 text-white' : 'text-gray-900',
+                        active ? 'bg-black text-white' : 'text-gray-900',
                         'relative cursor-default select-none py-2 pl-3 pr-9'
                       )
                     }
@@ -135,7 +135,7 @@ export const ListBox = () => {
                         {selected ? (
                           <span
                             className={classNames(
-                              active ? 'text-white' : 'text-indigo-600',
+                              active ? 'text-white' : 'text-black',
                               'absolute inset-y-0 right-0 flex items-center pr-4'
                             )}
                           >

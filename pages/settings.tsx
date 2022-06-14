@@ -1,35 +1,10 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          sky: colors.sky,
-          teal: colors.teal,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Disclosure, Switch } from '@headlessui/react'
 import {
   BellIcon,
   CogIcon,
   CreditCardIcon,
-  KeyIcon, UserCircleIcon,
+  KeyIcon,
+  UserCircleIcon,
   ViewGridAddIcon
 } from '@heroicons/react/outline'
 import Layout from 'components/layout'
@@ -39,7 +14,7 @@ import { useState } from 'react'
 const user = {
   name: 'Moustafa Elhadary',
   handle: 'deblewis',
-  email: 'Moustafa.Elhadary@gmail.com',
+  email: 'Moustafa@tawwr.com',
   imageUrl: '/Avatar.jpeg',
 }
 const navigation = [

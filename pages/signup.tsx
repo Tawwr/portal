@@ -1,6 +1,5 @@
 import Layout from 'components/layout'
 import { ListBox } from 'components/listbox'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -175,7 +174,7 @@ export default function SignUp() {
                           aria-describedby="comments-description"
                           name="comments"
                           type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 rounded border-gray-300 text-black focus:ring-black"
                         />
                       </div>
                       <div className="ml-3 text-sm">
@@ -183,15 +182,8 @@ export default function SignUp() {
                           htmlFor="comments"
                           className="font-medium text-gray-700"
                         >
-                          I'm Looking
+                          I'm Looking for my first job
                         </label>
-                        <span
-                          id="comments-description"
-                          className="text-gray-500"
-                        >
-                          <span className="sr-only">New comments </span> for my
-                          first job
-                        </span>
                       </div>
                     </div>
                     <ListBox />
@@ -284,7 +276,7 @@ export default function SignUp() {
                           rows={6}
                           name="comment"
                           id="comment"
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
                           defaultValue={''}
                         />
                       </div>
@@ -292,13 +284,13 @@ export default function SignUp() {
                     <div className="flex w-full flex-row items-center justify-end gap-5">
                       <button
                         type="submit"
-                        className="text-md  flex justify-center rounded-md border border-2 border-transparent border-black py-3 px-4 font-medium tracking-wide text-black text-white shadow-sm hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                        className="text-md  flex justify-center rounded-md border-2 border-transparent border-black py-3 px-4 font-medium tracking-wide text-black shadow-sm hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                       >
                         Cancel
                       </button>
                       <button
                         type="submit"
-                        className="text-md flex w-[35%] justify-center rounded-md border border-transparent border-indigo-500 bg-indigo-500 py-3 px-4 font-medium  tracking-wide text-white shadow-sm hover:border-2 hover:bg-transparent hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                        className="text-md flex w-[35%] justify-center rounded-md border border-transparent border-black bg-black py-3 px-4 font-medium  tracking-wide text-white shadow-sm hover:border-2 hover:bg-transparent hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                       >
                         Create Account
                       </button>
@@ -308,21 +300,26 @@ export default function SignUp() {
               </div>
             </div>
           </div>
-          <div className="fixed right-0 flex h-full w-[58%] flex-col items-center justify-center bg-gray-100 object-cover">
+          <div className="fixed right-0 hidden h-full w-[58%] flex-col items-center justify-center lg:flex">
+            <img
+              className="absolute inset-0 -z-10 h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80"
+              alt=""
+            />
             <div className="h-fit w-10/12 rounded-3xl bg-white p-10 shadow-lg">
               <h3 className="mb-4 text-2xl font-bold text-slate-700">
-                Apply to join Shrimp Society Talent Collective!
+                Apply to join the Tawwr Talent Portal!
               </h3>
               <p className="text-sm">
-                Talent collectives are groups of professionals open to new
-                opportunities. They’re designed to help you when you’re
-                searching and leave you be when you’re not. Once accepted you
+                The Tawwr Talent Portal is a group of professionals open to new
+                opportunities. The portal is designed to help you when you're
+                searching and leave you be when you're not. Once accepted you
                 can expect:
               </p>
               <ul className="my-6 ml-6 list-disc">
                 <li>
                   Curated introduction requests from hiring companies vetted by
-                  The Shrimp Society
+                  Tawwr
                 </li>
                 <li>
                   The ability to remain anonymous or hide yourself from specific
@@ -338,9 +335,6 @@ export default function SignUp() {
                 couple of days. Once accepted, you’ll only be messaged when a
                 company is requesting to speak with you.
               </span>
-              <p className="mt-10">
-                Developed By:{'>'} <mark>Markos</mark>
-              </p>
             </div>
           </div>
         </div>
