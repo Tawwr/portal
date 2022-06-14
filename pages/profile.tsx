@@ -1,4 +1,4 @@
-import {MenuIcon,} from '@heroicons/react/outline'
+import { MenuIcon } from '@heroicons/react/outline'
 import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
 import Layout from 'components/layout'
 import { classNames } from 'lib'
