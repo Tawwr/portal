@@ -1,4 +1,4 @@
-import SignInForm from "components/signInForm/signIn.component";
+import SignInForm from "components/signInForm";
 import Link from "next/link";
 
 

@@ -187,7 +187,7 @@ export default function SignUp() {
                         </label>
                       </div>
                     </div>
-                    <ListBox />
+                    <ListBox options={people} />
                     <div className="col-span-3">
                       <label
                         htmlFor="jobTitle"
