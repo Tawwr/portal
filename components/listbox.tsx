@@ -17,11 +17,7 @@ export const ListBox = ({ options }: { options: any[] }) => {
           <div className="relative mt-1">
             <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm">
               <span className="flex items-center">
-                <img
-                  src={selected.avatar}
-                  alt=""
-                  className="h-6 w-6 flex-shrink-0 rounded-full"
-                />
+                {selected.avatar}
                 <span className="ml-3 block truncate">{selected.name}</span>
               </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
@@ -54,11 +50,7 @@ export const ListBox = ({ options }: { options: any[] }) => {
                     {({ selected, active }) => (
                       <>
                         <div className="flex items-center">
-                          <img
-                            src={option.avatar}
-                            alt=""
-                            className="h-6 w-6 flex-shrink-0 rounded-full"
-                          />
+                        {option.avatar}
                           <span
                             className={classNames(
                               selected ? 'font-semibold' : 'font-normal',

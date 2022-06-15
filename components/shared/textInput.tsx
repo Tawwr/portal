@@ -1,25 +1,28 @@
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import React from 'react'
+import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
 
 interface props
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
-  error?: { message: string }
+extends React.DetailedHTMLProps<
+React.InputHTMLAttributes<HTMLInputElement>,
+HTMLInputElement
+> {
+  error?: string,
+  register:(name: string, options?: RegisterOptions) => UseFormRegisterReturn;
 }
-function TTextInput({ error, ...props }: props) {
+function TTextInput({ error, register, ...props }: props) {
+  const { type, title, name, autoComplete, placeholder, required } = props;
   return (
     <div>
       <div className="flex justify-between">
         <label
-          htmlFor={props.name}
+          htmlFor={title}
           className="block text-sm font-medium text-gray-700"
         >
-          {props.name}
+          {title}
         </label>
-        {!props.required && (
+        {required === false && (
           <span className="text-sm text-gray-500" id={props.name + '-optional'}>
             Optional
           </span>
@@ -28,7 +31,10 @@ function TTextInput({ error, ...props }: props) {
 
       <div className="relative mt-1 rounded-md shadow-sm">
         <input
-          {...props}
+          type={type}
+          autoComplete={autoComplete}
+          placeholder={placeholder}
+          {...register(name?? "default", {required:{value:required?? true, message:"This Field Is Required"}})}
           className={classNames(
             'block w-full rounded-md sm:text-sm',
             error
@@ -45,10 +51,11 @@ function TTextInput({ error, ...props }: props) {
           </div>
         )}
       </div>
-
-      <p className="text-sm text-red-600" id={props.name + '-error'}>
-        &nbsp; {error?.message}
-      </p>
+      {error && (
+        <p className="text-sm text-red-600" id={props.name + '-error'}>
+          &nbsp; {error}
+        </p>
+          )}
     </div>
   )
 }
