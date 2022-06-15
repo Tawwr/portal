@@ -20,9 +20,6 @@ const SignInForm: React.FC<Props> = () => {
     reset()
     console.log(data)
   }
-  useEffect(() => {
-    console.log(errors)
-  }, [errors])
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>

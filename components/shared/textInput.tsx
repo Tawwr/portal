@@ -1,44 +1,59 @@
 import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
-import React from 'react'
+import React from 'react';
 
 interface props
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  large?: boolean
-  enableClear?: boolean
-  passwordShow?: boolean
-  canClearValue?: boolean
-  error?: { message: string }
+  large?: boolean,
+  enableClear?: boolean,
+  passwordShow?: boolean,
+  canClearValue?: boolean,
+  error?: string,
+  isTextArea?: boolean,
 }
 function TTextInput({
   error,
+  isTextArea,
+  name,
+  required,
+  title,
   large = false,
   enableClear = false,
   passwordShow = false,
-  canClearValue=false,
+  canClearValue = false,
   ...props
 }: props) {
   return (
     <div>
       <div className="flex justify-between">
         <label
-          htmlFor={props.name}
+          htmlFor={title}
           className="block text-sm font-medium text-gray-700"
         >
-          {props.name}
+          {title}
         </label>
-        {!props.required && (
-          <span className="text-sm text-gray-500" id={props.name + '-optional'}>
+        {required === false && (
+          <span className="text-sm text-gray-500" id={name + '-optional'}>
             Optional
           </span>
         )}
       </div>
 
       <div className="relative mt-1 rounded-md shadow-sm">
-        <input
+        {isTextArea ? (<textarea
+          rows={6}
+          id={props.id}
+          className={classNames(
+            'block w-full rounded-md sm:text-sm',
+            error
+              ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
+              : "block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+          )}
+          defaultValue={''}
+        />) : (<input
           {...props}
           className={classNames(
             'block w-full rounded-md',
@@ -47,7 +62,7 @@ function TTextInput({
               ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
               : 'border-gray-300 focus:border-black focus:ring-black'
           )}
-        />
+        />)}
         {error && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             <ExclamationCircleIcon
@@ -62,10 +77,11 @@ function TTextInput({
           </div>
         )}
       </div>
-
-      <p className="text-sm text-red-600" id={props.name + '-error'}>
-        &nbsp; {error?.message}
-      </p>
+      {error && (
+        <p className="text-sm text-red-600" id={name + '-error'}>
+          &nbsp; {error}
+        </p>
+      )}
     </div>
   )
 }

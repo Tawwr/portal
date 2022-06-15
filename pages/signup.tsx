@@ -1,26 +1,41 @@
-/* eslint-disable react/no-unescaped-entities */
 import Layout from 'components/layout'
-import { ListBox } from 'components/listbox'
-import TTextInput from 'components/shared/textInput'
+import StepOne from 'components/registrationForm/stepOne.component'
+import StepTwo from 'components/registrationForm/stepTwo.component';
 import Link from 'next/link'
 import { useState } from 'react'
 
-const people = [
-  {
-    id: 1,
-    name: 'Male',
-    avatar: '🤷🏽‍♂️',
-  },
-  {
-    id: 2,
-    name: 'Female',
-    avatar: '💃🏽',
-  },
-]
+
+
 
 export default function SignUp() {
-  const [selected, setSelected] = useState(people[0])
+  const [step, setStep] = useState(1);
 
+  const handleSteps = (value: number) => {
+    setStep(value)
+  }
+  const displayTitle = (title: number) => {
+    if (title === 1) {
+      switch (step) {
+        case 1: return 'Create Your Profile';
+        case 2: return 'What are you looking for ?';
+        default: return ''
+      }
+    }
+    else if (title === 2) {
+      switch (step) {
+        case 1: return 'Filling out all the information below helps your profile stand out!';
+        case 2: return 'Set your preferences for your next role to help companies find you.';
+        default: return ''
+      }
+    }
+  }
+  const displayStep = () => {
+    switch (step) {
+      case 1: return <StepOne handleSteps={handleSteps} />;
+      case 2: return <StepTwo handleSteps={handleSteps} />;
+      default: return <StepOne handleSteps={handleSteps} />
+    }
+  }
   return (
     <Layout pageKey="SignUp" needsAuth={false}>
       <div className="h-screen	 bg-white">
@@ -29,261 +44,26 @@ export default function SignUp() {
             <div className="w-full lg:w-[90%]">
               <div>
                 <h2 className="mt-4 mb-2 text-4xl font-extrabold text-gray-900">
-                  Create Your Profile
+                  {displayTitle(1)}
                 </h2>
                 <span className="text-gray-400">
-                  Filling out all the information below helps your profile stand
-                  out!
+                  {displayTitle(2)}
                 </span>
-                <p className="mt-6 text-sm text-gray-600">
-                  Already Have An Account ?{' '}
-                  <Link href="/signin">
-                    <a className="text-md font-bold  text-blue-400  hover:text-black">
-                      Log in
-                    </a>
-                  </Link>
-                </p>
+                {step === 1 && (
+                  <p className="mt-6 text-sm text-gray-600">
+                    Already Have An Account ?{' '}
+                    <Link href="/signin">
+                      <a className="text-md font-bold  text-blue-400  hover:text-black">
+                        Log in
+                      </a>
+                    </Link>
+                  </p>
+                )}
               </div>
 
               <div className="mt-8">
                 <div className="mt-6">
-                  <form action="#" method="POST" className="space-y-4">
-                    <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
-                      <div className="col-span-3">
-                        <TTextInput
-                          type="text"
-                          name="First Name"
-                          id="firstName"
-                          autoComplete="firstName"
-                          placeholder="James"
-                          required
-                          // error={{ message: 'Please enter your first name' }}
-                        />
-                      </div>
-
-                      <div className="col-span-3">
-                        <TTextInput
-                          type="text"
-                          name="Last Name"
-                          id="lastName"
-                          autoComplete="lastName"
-                          placeholder="Bond"
-                          required
-                          error={{ message: 'Please enter your last name' }}
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Email address
-                      </label>
-                      <div className="mt-1">
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          autoComplete="email"
-                          placeholder="James.Bond@gmail.com"
-                          required
-                          className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="password"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Password
-                      </label>
-                      <div className="mt-1">
-                        <input
-                          id="password"
-                          name="password"
-                          type="password"
-                          autoComplete="current-password"
-                          required
-                          className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
-                        <div className="col-span-3">
-                          <label
-                            htmlFor="Website"
-                            className="block text-sm font-medium text-gray-700"
-                          >
-                            Website
-                          </label>
-                          <div className="mt-1">
-                            <input
-                              type="text"
-                              name="Website"
-                              id="Website"
-                              autoComplete="address-level2"
-                              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                              placeholder="https://markosbahgat.com"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="col-span-3">
-                          <label
-                            htmlFor="LinkedIn"
-                            className="block text-sm font-medium text-gray-700"
-                          >
-                            LinkedIn
-                          </label>
-                          <div className="mt-1">
-                            <input
-                              type="text"
-                              name="LinkedIn"
-                              id="LinkedIn"
-                              autoComplete="address-level1"
-                              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                              placeholder="linkedin.com/in/markosbahgat"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <hr />
-                    <h3>Work Experience</h3>
-                    <div className="relative flex items-start">
-                      <div className="flex h-5 items-center">
-                        <input
-                          id="comments"
-                          aria-describedby="comments-description"
-                          name="comments"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-black focus:ring-black"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm">
-                        <label
-                          htmlFor="comments"
-                          className="font-medium text-gray-700"
-                        >
-                          I'm Looking for my first job
-                        </label>
-                      </div>
-                    </div>
-                    <ListBox options={people} />
-                    <div className="col-span-3">
-                      <label
-                        htmlFor="jobTitle"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Job Title
-                      </label>
-                      <div className="mt-1">
-                        <input
-                          type="text"
-                          name="jobTitle"
-                          id="jobTitle"
-                          autoComplete="address-level1"
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                          placeholder="Product Designer"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
-                      <div className="col-span-3">
-                        <label
-                          htmlFor="startDate"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Start Date
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            name="startDate"
-                            id="startDate"
-                            autoComplete="address-level1"
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                            placeholder="MM/YYYY"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-span-3">
-                        <label
-                          htmlFor="endDate"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          End Date
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            name="endDate"
-                            id="endDate"
-                            autoComplete="address-level1"
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                            placeholder="MM/YYYY"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <hr />
-                    <h3>Start your candidate profile</h3>
-                    <div className="col-span-3">
-                      <label
-                        htmlFor="profileTitle"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Candidate Profile Title
-                      </label>
-                      <div className="mt-1">
-                        <input
-                          type="text"
-                          name="profileTitle"
-                          id="profileTitle"
-                          autoComplete="address-level1"
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                          placeholder="Freelancer Product Designer"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="comment"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Tell Us About Yourself
-                      </label>
-                      <div className="mt-1">
-                        <textarea
-                          rows={6}
-                          name="comment"
-                          id="comment"
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                          defaultValue={''}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row items-center justify-end gap-5">
-                      <button
-                        type="submit"
-                        className="text-md  flex justify-center rounded-md border-2 border-transparent border-black py-3 px-4 font-medium tracking-wide text-black shadow-sm hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        className="text-md flex w-[35%] justify-center rounded-md border border-transparent border-black bg-black py-3 px-4 font-medium  tracking-wide text-white shadow-sm hover:border-2 hover:bg-transparent hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-                      >
-                        Create Account
-                      </button>
-                    </div>
-                  </form>
+                  {displayStep()}
                 </div>
               </div>
             </div>
