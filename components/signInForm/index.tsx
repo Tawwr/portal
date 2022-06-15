@@ -32,6 +32,7 @@ const SignInForm: React.FC<Props> = () => {
         >
           Email address
         </label>
+        {/* TODO: replace with correct input */}
         <div
           className={styles[`input_wrapper`]}
           id={styles[`${errors.email ? 'error' : undefined}`]}
@@ -60,6 +61,7 @@ const SignInForm: React.FC<Props> = () => {
         >
           Password
         </label>
+        {/* TODO: replace with correct input */}
         <div
           className={styles[`input_wrapper`]}
           id={styles[`${errors.email ? 'error' : undefined}`]}
