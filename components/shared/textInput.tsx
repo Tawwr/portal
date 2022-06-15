@@ -10,6 +10,7 @@ interface props
   large?: boolean
   enableClear?: boolean
   passwordShow?: boolean
+  canClearValue?: boolean
   error?: { message: string }
 }
 function TTextInput({
@@ -17,6 +18,7 @@ function TTextInput({
   large = false,
   enableClear = false,
   passwordShow = false,
+  canClearValue=false,
   ...props
 }: props) {
   return (
@@ -54,7 +56,7 @@ function TTextInput({
             />
           </div>
         )}
-        {props.value && !error && (
+        {canClearValue && props.value && !error && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             <XIcon className="h-5 w-5 text-black" aria-hidden="true" />
           </div>
