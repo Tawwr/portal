@@ -1,14 +1,11 @@
 import Layout from 'components/layout'
 import StepOne from 'components/registrationForm/stepOne.component'
-import StepTwo from 'components/registrationForm/stepTwo.component';
+import StepTwo from 'components/registrationForm/stepTwo.component'
 import Link from 'next/link'
 import { useState } from 'react'
 
-
-
-
 export default function SignUp() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1)
 
   const handleSteps = (value: number) => {
     setStep(value)
@@ -16,24 +13,32 @@ export default function SignUp() {
   const displayTitle = (title: number) => {
     if (title === 1) {
       switch (step) {
-        case 1: return 'Create Your Profile';
-        case 2: return 'What are you looking for ?';
-        default: return ''
+        case 1:
+          return 'Create Your Profile'
+        case 2:
+          return 'What are you looking for ?'
+        default:
+          return ''
       }
-    }
-    else if (title === 2) {
+    } else if (title === 2) {
       switch (step) {
-        case 1: return 'Filling out all the information below helps your profile stand out!';
-        case 2: return 'Set your preferences for your next role to help companies find you.';
-        default: return ''
+        case 1:
+          return 'Filling out all the information below helps your profile stand out!'
+        case 2:
+          return 'Set your preferences for your next role to help companies find you.'
+        default:
+          return ''
       }
     }
   }
   const displayStep = () => {
     switch (step) {
-      case 1: return <StepOne handleSteps={handleSteps} />;
-      case 2: return <StepTwo handleSteps={handleSteps} />;
-      default: return <StepOne handleSteps={handleSteps} />
+      case 1:
+        return <StepOne handleSteps={handleSteps} />
+      case 2:
+        return <StepTwo handleSteps={handleSteps} />
+      default:
+        return <StepOne handleSteps={handleSteps} />
     }
   }
   return (
@@ -46,9 +51,7 @@ export default function SignUp() {
                 <h2 className="mt-4 mb-2 text-4xl font-extrabold text-gray-900">
                   {displayTitle(1)}
                 </h2>
-                <span className="text-gray-400">
-                  {displayTitle(2)}
-                </span>
+                <span className="text-gray-400">{displayTitle(2)}</span>
                 {step === 1 && (
                   <p className="mt-6 text-sm text-gray-600">
                     Already Have An Account ?{' '}
@@ -62,9 +65,7 @@ export default function SignUp() {
               </div>
 
               <div className="mt-8">
-                <div className="mt-6">
-                  {displayStep()}
-                </div>
+                <div className="mt-6">{displayStep()}</div>
               </div>
             </div>
           </div>
@@ -80,9 +81,9 @@ export default function SignUp() {
               </h3>
               <p className="text-sm">
                 The Tawwr Talent Portal is a group of professionals open to new
-                opportunities. The portal is designed to help you when you're
-                searching and leave you be when you're not. Once accepted you
-                can expect:
+                opportunities. The portal is designed to help you when
+                you&apos;re searching and leave you be when you&apos;re not.
+                Once accepted you can expect:
               </p>
               <ul className="my-6 ml-6 list-disc">
                 <li>
@@ -100,8 +101,8 @@ export default function SignUp() {
               </ul>
               <span>
                 Fill out the form to apply. You can expect a response within a
-                couple of days. Once accepted, you'll only be messaged when a
-                company is requesting to speak with you.
+                couple of days. Once accepted, you&apos;ll only be messaged when
+                a company is requesting to speak with you.
               </span>
             </div>
           </div>

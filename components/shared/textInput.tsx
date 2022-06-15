@@ -7,12 +7,12 @@ interface props
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  large?: boolean,
-  enableClear?: boolean,
-  passwordShow?: boolean,
-  canClearValue?: boolean,
-  error?: string,
-  isTextArea?: boolean,
+  large?: boolean
+  enableClear?: boolean
+  passwordShow?: boolean
+  canClearValue?: boolean
+  error?: string
+  isTextArea?: boolean
 }
 function TTextInput({
   error,
@@ -43,26 +43,30 @@ function TTextInput({
       </div>
 
       <div className="relative mt-1 rounded-md shadow-sm">
-        {isTextArea ? (<textarea
-          rows={6}
-          id={props.id}
-          className={classNames(
-            'block w-full rounded-md sm:text-sm',
-            error
-              ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
-              : "block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-          )}
-          defaultValue={''}
-        />) : (<input
-          {...props}
-          className={classNames(
-            'block w-full rounded-md',
-            large ? 'text-md py-4' : 'sm:text-sm',
-            error
-              ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
-              : 'border-gray-300 focus:border-black focus:ring-black'
-          )}
-        />)}
+        {isTextArea ? (
+          <textarea
+            rows={6}
+            id={props.id}
+            className={classNames(
+              'block w-full rounded-md sm:text-sm',
+              error
+                ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
+                : 'block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm'
+            )}
+            defaultValue={''}
+          />
+        ) : (
+          <input
+            {...props}
+            className={classNames(
+              'block w-full rounded-md',
+              large ? 'text-md py-4' : 'sm:text-sm',
+              error
+                ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
+                : 'border-gray-300 focus:border-black focus:ring-black'
+            )}
+          />
+        )}
         {error && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             <ExclamationCircleIcon
