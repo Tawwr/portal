@@ -3,7 +3,7 @@ import {
   ArrowRightIcon,
   BriefcaseIcon,
   CurrencyDollarIcon,
-  LocationMarkerIcon,
+  LocationMarkerIcon
 } from '@heroicons/react/solid'
 import { Hit } from 'instantsearch.js'
 import Link from 'next/link'
