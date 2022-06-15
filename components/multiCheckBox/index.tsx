@@ -4,20 +4,19 @@ import { Combobox } from '@headlessui/react'
 import { classNames } from 'lib'
 
 interface Props {
-    label:string,
+    label?: string,
+    options: any[]
 }
 
-const MultiCheckBox:React.FC<Props> = ({label}) => {
-    const people = [
-      { id: 1, name: 'Leslie Alexander' },
-    ]
+const MultiCheckBox:React.FC<Props> = ({label, options}) => {
+    
     const [query, setQuery] = useState('');
     const [selectedPerson, setSelectedPerson] = useState();
 
   const filteredPeople =
     query === ''
-      ? people
-      : people.filter((person) => {
+      ? options
+      : options.filter((person) => {
           return person.name.toLowerCase().includes(query.toLowerCase())
         })
 
@@ -27,8 +26,8 @@ const MultiCheckBox:React.FC<Props> = ({label}) => {
       <div className="relative mt-1">
         <Combobox.Input
           className="w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
-          onChange={(event) => setQuery(event.target.value)}
-          displayValue={query}
+          onChange={(event:any) => setQuery(event.target.value)}
+        //   displayValue={query}
         />
         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
           <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -49,7 +48,7 @@ const MultiCheckBox:React.FC<Props> = ({label}) => {
               >
                 {({ active, selected }) => (
                   <>
-                    <span className={classNames('block truncate', (selected && 'font-seminole'))}>{person.name}</span>
+                    <span className={classNames('block truncate')}>{person.name}</span>
 
                     {selected && (
                       <span

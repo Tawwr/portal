@@ -4,15 +4,15 @@ import React from 'react'
 import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
 
 interface props
-extends React.DetailedHTMLProps<
-React.InputHTMLAttributes<HTMLInputElement>,
-HTMLInputElement
-> {
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   error?: string,
-  register:(name: string, options?: RegisterOptions) => UseFormRegisterReturn;
+  register: (name: string, options?: RegisterOptions) => UseFormRegisterReturn,
+  isTextArea?: boolean,
 }
-function TTextInput({ error, register, ...props }: props) {
-  const { type, title, name, autoComplete, placeholder, required } = props;
+function TTextInput({ error, register, isTextArea, name, required, title, ...props }: props) {
   return (
     <div>
       <div className="flex justify-between">
@@ -23,25 +23,34 @@ function TTextInput({ error, register, ...props }: props) {
           {title}
         </label>
         {required === false && (
-          <span className="text-sm text-gray-500" id={props.name + '-optional'}>
+          <span className="text-sm text-gray-500" id={name + '-optional'}>
             Optional
           </span>
         )}
       </div>
 
       <div className="relative mt-1 rounded-md shadow-sm">
-        <input
-          type={type}
-          autoComplete={autoComplete}
-          placeholder={placeholder}
-          {...register(name?? "default", {required:{value:required?? true, message:"This Field Is Required"}})}
+        {isTextArea ? (<textarea
+          rows={6}
+          id={props.id}
+          className={classNames(
+            'block w-full rounded-md sm:text-sm',
+            error
+              ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
+              : "block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+          )}
+          defaultValue={''}
+          {...register(name ?? "default", { required: { value: required ?? true, message: "This Field Is Required" } })}
+        />) : (<input
+          {...props}
+          {...register(name ?? "default", { required: { value: required ?? true, message: "This Field Is Required" } })}
           className={classNames(
             'block w-full rounded-md sm:text-sm',
             error
               ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
               : 'border-gray-300 focus:border-black focus:ring-black'
           )}
-        />
+        />)}
         {error && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             <ExclamationCircleIcon
@@ -52,10 +61,10 @@ function TTextInput({ error, register, ...props }: props) {
         )}
       </div>
       {error && (
-        <p className="text-sm text-red-600" id={props.name + '-error'}>
+        <p className="text-sm text-red-600" id={name + '-error'}>
           &nbsp; {error}
         </p>
-          )}
+      )}
     </div>
   )
 }

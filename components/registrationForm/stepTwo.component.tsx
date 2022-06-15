@@ -5,10 +5,10 @@ import { useForm } from 'react-hook-form';
 import TTextInput from 'components/shared/textInput';
 
 interface Props {
-    handleSteps:(value:number) => void,
+    handleSteps: (value: number) => void,
 }
 
-const StepTwo:React.FC<Props> = ({handleSteps}) => {
+const StepTwo: React.FC<Props> = ({ handleSteps }) => {
     const options = [
         {
             id: 1,
@@ -21,6 +21,9 @@ const StepTwo:React.FC<Props> = ({handleSteps}) => {
             avatar: '💭'
         }
     ];
+    const chooseOptions = [
+        { id: 1, name: 'Leslie Alexander' },
+    ]
     const {
         register,
         handleSubmit,
@@ -31,22 +34,48 @@ const StepTwo:React.FC<Props> = ({handleSteps}) => {
         reset()
 
     })
+    const infoInputs = [
+        {
+            title: "Work Experience",
+            label: "How Much Expreience do you have? Please select no more than 2.",
+            options: chooseOptions
+        },
+        {
+            title: "Job type",
+            label: "What type of job are you looking for?",
+            options: chooseOptions
+        },
+        {
+            title: "Relevant Roles",
+            label: "What sorts of roles are you looking for? Please select no more than 3.",
+            options: chooseOptions
+        },
+        {
+            title: "Relevant Industries",
+            label: "What Industries are you interested in? Please select no more that 3.",
+            options: chooseOptions
+        },
+        {
+            title: "Where would you prefer to work?",
+            label: "",
+            options: chooseOptions
+        },
+    ]
     return (
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form onSubmit={onSubmit} className="space-y-4" noValidate>
             <hr className='mb-5' />
-            <span>Where are you at in your job search?</span>
-            <ListBox options={options} />
+            <ListBox options={options} label="Where are you at in your job search?" />
             <div>
                 <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
                     What are you looking for in your next role?
                 </label>
                 <div className="mt-1">
-                    <textarea
-                        rows={4}
-                        name="comment"
-                        id="comment"
-                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                        defaultValue={''}
+                    <TTextInput
+                        id='nextRoleDes'
+                        isTextArea={true}
+                        name="nextRoleDes"
+                        register={register}
+                        error={errors.nextRoleDes?.message ?? undefined}
                     />
                 </div>
             </div>
@@ -54,36 +83,14 @@ const StepTwo:React.FC<Props> = ({handleSteps}) => {
             <h2 className='font-bold text-2xl'>Job Preferences</h2>
             <p>Tell companies what you are looking for in your next role</p>
             <div className='flex flex-col gap-5 my-10'>
-                <div>
-                    <h3 className='font-bold text-xl'>Work Experience</h3>
-                    <p className='mb-3 text-gray-700'>How Much Expreience do you have? Please select no more than 2.</p>
-                    <MultiCheckBox label='' />
-
-                </div>
-                <div>
-
-                    <h3 className='font-bold text-xl'>Job type</h3>
-                    <p className='mb-3 text-gray-700'>What type of job are you looking for?</p>
-                    <MultiCheckBox label=''/>
-                </div>
-                <div>
-                    <h3 className='font-bold text-xl'>Relevant Roles</h3>
-                    <p className='mb-3 text-gray-700'>What sorts of roles are you looking for? Please select no more than 3.</p>
-                    <MultiCheckBox label=''/>
-
-                </div>
-                <div>
-
-                    <h3 className='font-bold text-xl'>Relevant Industries</h3>
-                    <p className='mb-3 text-gray-700'>What Industries are you interested in? Please select no more that 3.</p>
-                    <MultiCheckBox label=''/>
-                </div>
-                <div>
-
-                    <h3 className='font-bold text-xl mb-3'>Where would you prefer to work?</h3>
-                    <MultiCheckBox label=''/>
-                </div>
-                <div></div>
+                {
+                    infoInputs.map(item => (
+                        <div key={Date.now()}>
+                            <h3 className='font-bold text-xl mb-3'>{item.title}</h3>
+                            <MultiCheckBox options={item.options} label={item.label} />
+                        </div>
+                    ))
+                }
                 <div className="relative flex items-start">
                     <div className="flex h-5 items-center">
                         <input
@@ -107,7 +114,7 @@ const StepTwo:React.FC<Props> = ({handleSteps}) => {
                     <h3 className='font-bold text-xl'>What is your expected salary?</h3>
                     <p className='mb-3 text-gray-700'>This should only be your cash amount you are looking for and not including methods of compensation</p>
                     <div className='flex flex-row gap-5 mb-10'>
-                        <MultiCheckBox label=" " />
+                        <MultiCheckBox options={chooseOptions} />
                         <TTextInput
                             type="number"
                             name="salary"
