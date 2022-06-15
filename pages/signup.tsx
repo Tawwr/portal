@@ -22,7 +22,7 @@ export default function SignUp() {
   const [selected, setSelected] = useState(people[0])
 
   return (
-    <Layout pageKey="SignUp">
+    <Layout pageKey="SignUp" needsAuth={false}>
       <div className="h-screen	 bg-white">
         <div className="flex min-h-full w-full">
           <div className="flex w-[45%] flex-1 flex-col items-start justify-start py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-16">
