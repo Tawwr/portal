@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import appReducer from 'redux/reducers/app'
+import appReducer from 'store/slices/app.slice'
 const store = configureStore({
   reducer: {
     app: appReducer,
@@ -8,4 +8,4 @@ const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>
 
-export { store }
+export default store;

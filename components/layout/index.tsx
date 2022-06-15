@@ -11,13 +11,13 @@ const user = {
 }
 const navigation = [
   { name: 'Dashboard', href: '/' },
+  { name: 'Detail', href: '/' },
   { name: 'Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
   { name: 'SignUp', href: '/signup' },
   { name: 'SignIn', href: '/signin' },
 ] as const
 const userNavigation = [
-  { name: 'Dashboard', href: '/' },
   { name: 'Your Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
   { name: 'Sign out', href: '#' },
@@ -34,23 +34,22 @@ type props = {
 export default function Layout({ children, pageKey }: props) {
   return (
     <>
-      <div className="min-h-screen flex flex-col">
-        <header className="bg-white shadow sticky top-0 z-50">
+      <div className="flex min-h-screen flex-col">
+        <header className="sticky top-0 z-50 bg-white shadow">
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <Popover className="flex h-16 justify-between">
               <div className="flex px-2 lg:px-0">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
                     <a>
-                    <img
-                      className="h-8 w-auto"
-                      src="/logo.png"
-                      alt="Workflow"
+                      <img
+                        className="h-8 w-auto"
+                        src="/logo.png"
+                        alt="Workflow"
                       />
                     </a>
                   </Link>
                 </div>
-               
               </div>
               <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end"></div>
               <div className="flex items-center lg:hidden">
@@ -107,7 +106,6 @@ export default function Layout({ children, pageKey }: props) {
                               </Popover.Button>
                             </div>
                           </div>
-                          
                         </div>
                         <div className="pt-4 pb-2">
                           <div className="flex items-center px-5">
@@ -171,15 +169,15 @@ export default function Layout({ children, pageKey }: props) {
                         <Menu.Item key={item.name}>
                           {({ active }) => (
                             <Link href={item.href}>
-                            <a
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
+                              <a
+                                className={classNames(
+                                  active ? 'bg-gray-100' : '',
+                                  'block px-4 py-2 text-sm text-gray-700'
                                 )}
-                                >
-                              {item.name}
-                            </a>
-                          </Link>
+                              >
+                                {item.name}
+                              </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
