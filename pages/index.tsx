@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/react/outline'
 import {
+  ArrowRightIcon,
   BriefcaseIcon,
   CodeIcon,
   CurrencyDollarIcon,
@@ -67,23 +68,18 @@ export default function Dashboard() {
           <div className="absolute inset-0">
             <img
               className="h-full w-full object-cover"
-              src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
+              src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format"
               alt=""
             />
             <div
-              className="absolute inset-0 bg-gray-800 mix-blend-multiply"
+              className="absolute inset-0 bg-gray-800 opacity-50 mix-blend-multiply"
               aria-hidden="true"
             />
           </div>
           <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-              Support
+              Taking your career to the next level?{' '}
             </h1>
-            <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate
-              id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
-              fames. Dui, amet, nec sit pulvinar.
-            </p>
           </div>
         </div>
 
@@ -94,7 +90,7 @@ export default function Dashboard() {
         >
           <div className="grid grid-cols-1 gap-y-20 ">
             <div className="flex flex-col rounded-2xl bg-white shadow-xl">
-              <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+              <div className="relative flex-1 px-6 pt-12 pb-8 md:px-8">
                 <TTextInput
                   type="text"
                   placeholder="Search by Job, Company, Tech stack, ..."
@@ -102,10 +98,6 @@ export default function Dashboard() {
                   large
                   // error={{ message: 'Please enter your first name' }}
                 />
-                <p className="mt-4 text-base text-gray-500">DESCRIPTION</p>
-              </div>
-              <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
-                contact
               </div>
             </div>
           </div>
@@ -157,7 +149,7 @@ export default function Dashboard() {
                                       <span className="sr-only">
                                         Open options
                                       </span>
-                                      <StarIcon
+                                      <ArrowRightIcon
                                         className="h-5 w-5"
                                         aria-hidden="true"
                                       />
