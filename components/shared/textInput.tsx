@@ -1,4 +1,4 @@
-import { ExclamationCircleIcon } from '@heroicons/react/solid'
+import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import React from 'react'
 
@@ -7,9 +7,18 @@ interface props
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
+  large?: boolean
+  enableClear?: boolean
+  passwordShow?: boolean
   error?: { message: string }
 }
-function TTextInput({ error, ...props }: props) {
+function TTextInput({
+  error,
+  large = false,
+  enableClear = false,
+  passwordShow = false,
+  ...props
+}: props) {
   return (
     <div>
       <div className="flex justify-between">
@@ -30,7 +39,8 @@ function TTextInput({ error, ...props }: props) {
         <input
           {...props}
           className={classNames(
-            'block w-full rounded-md sm:text-sm',
+            'block w-full rounded-md',
+            large ? 'text-md py-4' : 'sm:text-sm',
             error
               ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
               : 'border-gray-300 focus:border-black focus:ring-black'
@@ -42,6 +52,11 @@ function TTextInput({ error, ...props }: props) {
               className="h-5 w-5 text-red-500"
               aria-hidden="true"
             />
+          </div>
+        )}
+        {props.value && !error && (
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <XIcon className="h-5 w-5 text-black" aria-hidden="true" />
           </div>
         )}
       </div>
