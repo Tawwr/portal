@@ -1,25 +1,29 @@
 import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
-import React from 'react'
-import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
+import React from 'react';
 
 interface props
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  large?: boolean
-  enableClear?: boolean
-  passwordShow?: boolean
-  canClearValue?: boolean
-  error?: { message: string }
+  large?: boolean,
+  enableClear?: boolean,
+  passwordShow?: boolean,
+  canClearValue?: boolean,
+  error?: string,
+  isTextArea?: boolean,
 }
 function TTextInput({
   error,
+  isTextArea,
+  name,
+  required,
+  title,
   large = false,
   enableClear = false,
   passwordShow = false,
-  canClearValue=false,
+  canClearValue = false,
   ...props
 }: props) {
   return (
@@ -49,10 +53,8 @@ function TTextInput({
               : "block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
           )}
           defaultValue={''}
-          {...register(name ?? "default", { required: { value: required ?? true, message: "This Field Is Required" } })}
         />) : (<input
           {...props}
-          {...register(name ?? "default", { required: { value: required ?? true, message: "This Field Is Required" } })}
           className={classNames(
             'block w-full rounded-md',
             large ? 'text-md py-4' : 'sm:text-sm',

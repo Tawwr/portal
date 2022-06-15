@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import TTextInput from '../shared/textInput';
 import { ListBox } from 'components/listbox';
-import { useForm } from 'react-hook-form';
-
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 interface Props {
     handleSteps: (value: number) => void,
@@ -27,18 +27,38 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
         email: 'Moustafa@tawwr.com',
         imageUrl: '/Avatar.jpeg',
     }
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm({ mode: 'all', criteriaMode: 'all' })
-    const onSubmit = handleSubmit((data) => {
-        reset()
-        handleSteps(2);
-    })
+    const formik = useFormik({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            website: '',
+            linkedIn: '',
+            github: '',
+            profileTitle: '',
+            jobTitle: '',
+            bio: '',
+            startDate: '',
+            endDate:''
+        },
+        validationSchema: Yup.object({
+            firstName: Yup.string()
+                .max(15, 'Must be 15 characters or less')
+                .required('Required'),
+                lastName: Yup.string()
+                .max(20, 'Must be 20 characters or less')
+                .required('Required'),
+              email: Yup.string().email('Invalid email address').required('Required'),
+        }),
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+            handleSteps(2);
+        },
+
+    });
     return (
-        <form onSubmit={onSubmit} className="space-y-4" noValidate>
+        <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
             <div className="mt-6 flex-grow lg:mt-0 ">
                 <p
                     className="text-sm font-medium text-gray-700"
@@ -108,8 +128,9 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         placeholder="James"
                         title='First Name'
                         name='firstName'
-                        register={register}
-                        error={errors.firstName?.message ?? undefined}
+                        error={formik.touched.firstName && formik.errors.firstName ? formik.errors.firstName : undefined}
+                        onChange={formik.handleChange}
+                        value={formik.values.firstName}
                     />
                 </div>
 
@@ -122,8 +143,9 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         required
                         title='Last Name'
                         name='lastName'
-                        register={register}
-                        error={errors.lastName?.message ?? undefined}
+                        error={formik.touched.lastName && formik.errors.lastName ? formik.errors.lastName : undefined}
+                        onChange={formik.handleChange}
+                        value={formik.values.lastName}
                     />
                 </div>
             </div>
@@ -137,8 +159,9 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         autoComplete="email"
                         placeholder="James.Bond@gmail.com"
                         title='Email Address'
-                        register={register}
-                        error={errors.email?.message ?? undefined}
+                        error={formik.touched.email && formik.errors.email ? formik.errors.email : undefined}
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
                     />
                 </div>
             </div>
@@ -151,8 +174,9 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         type="password"
                         autoComplete="current-password"
                         title='Password'
-                        register={register}
-                        error={errors.password?.message ?? undefined}
+                        error={formik.touched.password && formik.errors.password ? formik.errors.password : undefined}
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
                     />
                 </div>
             </div>
@@ -168,8 +192,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                                 autoComplete="address-website"
                                 title='Website'
                                 required={false}
-                                register={register}
-                                error={errors.website?.message ?? undefined}
+                                error={formik.touched.website && formik.errors.website ? formik.errors.website : undefined}
+                                onChange={formik.handleChange}
+
+         value={formik.values.website}
                             />
                         </div>
                     </div>
@@ -178,14 +204,16 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         <div className="mt-1">
                             <TTextInput
                                 type="text"
-                                name="LinkedIn"
-                                id="LinkedIn"
+                                name="linkedIn"
+                                id="linkedIn"
                                 placeholder="linkedin.com/in/markosbahgat"
                                 autoComplete="address-linkedin"
                                 title='LinkedIn'
                                 required={false}
-                                register={register}
-                                error={errors.linkedIn?.message ?? undefined}
+                                error={formik.touched.linkedIn && formik.errors.linkedIn ? formik.errors.linkedIn : undefined}
+                                onChange={formik.handleChange}
+
+         value={formik.values.linkedIn}
                             />
                         </div>
                     </div>
@@ -200,8 +228,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                     autoComplete="address-linkedin"
                     title='Github'
                     required={false}
-                    register={register}
-                    error={errors.github?.message ?? undefined}
+                    error={formik.touched.github && formik.errors.github ? formik.errors.github : undefined}
+                    onChange={formik.handleChange}
+
+         value={formik.values.github}
                 />
             </div>
             <hr />
@@ -235,8 +265,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         autoComplete="job-role"
                         placeholder="Product Designer"
                         title='Job Title'
-                        register={register}
-                        error={errors.jobTitle?.message ?? undefined}
+                        error={formik.touched.jobTitle && formik.errors.jobTitle ? formik.errors.jobTitle : undefined}
+                        onChange={formik.handleChange}
+
+         value={formik.values.jobTitle}
                     />
                 </div>
             </div>
@@ -250,8 +282,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                             autoComplete="start-date"
                             placeholder="MM/YYYY"
                             title='Start Date'
-                            register={register}
-                            error={errors.startDate?.message ?? undefined}
+                            error={formik.touched.startDate && formik.errors.startDate ? formik.errors.startDate : undefined}
+                            onChange={formik.handleChange}
+
+         value={formik.values.startDate}
                         />
                     </div>
                 </div>
@@ -265,8 +299,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                             autoComplete="end-date"
                             placeholder="MM/YYYY"
                             title='End Date'
-                            register={register}
-                            error={errors.endDate?.message ?? undefined}
+                            error={formik.touched.startDate && formik.errors.startDate ? formik.errors.startDate : undefined}
+                            onChange={formik.handleChange}
+
+         value={formik.values.endDate}
                         />
                     </div>
                     <div className="relative flex items-start">
@@ -301,8 +337,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         autoComplete="start-date"
                         placeholder="Freelancer Product Designer"
                         title='Candidate Profile Title'
-                        register={register}
-                        error={errors.profileTitle?.message ?? undefined}
+                        error={formik.touched.profileTitle && formik.errors.profileTitle ? formik.errors.profileTitle : undefined}
+                        onChange={formik.handleChange}
+
+         value={formik.values.profileTitle}
                     />
                 </div>
             </div>
@@ -318,9 +356,11 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
                         id="bio"
                         name="bio"
                         autoComplete='bio-description'
-                        register={register}
-                        error={errors.bio?.message ?? undefined}
+                        error={formik.touched.bio && formik.errors.bio ? formik.errors.bio : undefined}
                         isTextArea={true}
+                        onChange={formik.handleChange}
+
+         value={formik.values.bio}
                     />
                 </div>
             </div>
