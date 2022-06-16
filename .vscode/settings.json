@@ -5,6 +5,8 @@
         "Formik",
         "headlessui",
         "instantsearch",
-        "Tawwr"
+        "SUPABASE",
+        "Tawwr",
+        "uuidv"
     ]
 }

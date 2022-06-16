@@ -32,28 +32,33 @@ const StepTwo: React.FC<Props> = ({ handleSteps }) => {
   })
   const infoInputs = [
     {
+      id: 1,
       title: 'Work Experience',
-      label: 'How Much Expreience do you have? Please select no more than 2.',
+      label: 'How much experience do you have? Please select no more than 2.',
       options: chooseOptions,
     },
     {
+      id: 2,
       title: 'Job type',
       label: 'What type of job are you looking for?',
       options: chooseOptions,
     },
     {
+      id: 3,
       title: 'Relevant Roles',
       label:
         'What sorts of roles are you looking for? Please select no more than 3.',
       options: chooseOptions,
     },
     {
+      id: 4,
       title: 'Relevant Industries',
       label:
         'What Industries are you interested in? Please select no more that 3.',
       options: chooseOptions,
     },
     {
+      id: 5,
       title: 'Where would you prefer to work?',
       label: '',
       options: chooseOptions,
@@ -84,7 +89,7 @@ const StepTwo: React.FC<Props> = ({ handleSteps }) => {
       <p>Tell companies what you are looking for in your next role</p>
       <div className="my-10 flex flex-col gap-5">
         {infoInputs.map((item) => (
-          <div key={Date.now()}>
+          <div key={item.id}>
             <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
             <MultiCheckBox options={item.options} label={item.label} />
           </div>

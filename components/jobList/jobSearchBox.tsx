@@ -13,7 +13,7 @@ export default function JobSearchBox(props: UseSearchBoxProps) {
       required
       large
       value={value}
-      onChange={(e) => {
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
         refine(e.target.value)
       }}

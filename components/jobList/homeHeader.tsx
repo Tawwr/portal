@@ -17,7 +17,7 @@ export default function HomeHeader() {
         </div>
         <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Taking your career to the next level?{' '}
+            Taking your career to the next level?
           </h1>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function HomeHeader() {
       >
         <div className="grid grid-cols-1 gap-y-20 ">
           <div className="flex flex-col rounded-2xl bg-white shadow-xl">
-            <div className="relative flex-1 px-6 pt-12 pb-8 md:px-8">
+            <div className="relative flex-1 px-6 py-10 md:px-8">
               <JobSearchBox />
             </div>
           </div>

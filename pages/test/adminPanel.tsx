@@ -1,42 +1,4 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          cyan: colors.cyan,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/line-clamp'),
-    ],
-  }
-  ```
-*/
-import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
-import {
-  ArchiveIcon as ArchiveIconSolid,
-  ChevronDownIcon,
-  ChevronUpIcon,
-  DotsVerticalIcon,
-  FolderDownloadIcon,
-  PencilIcon,
-  ReplyIcon,
-  SearchIcon,
-  UserAddIcon,
-} from '@heroicons/react/solid'
 import {
   ArchiveIcon as ArchiveIconOutline,
   BanIcon,
@@ -46,9 +8,21 @@ import {
   MenuIcon,
   PencilAltIcon,
   UserCircleIcon,
-  XIcon,
+  XIcon
 } from '@heroicons/react/outline'
+import {
+  ArchiveIcon as ArchiveIconSolid,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  DotsVerticalIcon,
+  FolderDownloadIcon,
+  PencilIcon,
+  ReplyIcon,
+  SearchIcon,
+  UserAddIcon
+} from '@heroicons/react/solid'
 import { classNames } from 'lib'
+import { Fragment, useState } from 'react'
 
 const user = {
   name: 'Whitney Francis',
@@ -222,7 +196,6 @@ const message = {
     },
   ],
 }
-
 
 export default function Example() {
   const [open, setOpen] = useState(false)
@@ -969,7 +942,7 @@ export default function Example() {
                           </time>
                         </div>
                         <div className="mt-1">
-                          <p className="line-clamp-2 text-sm text-gray-600">
+                          <p className="text-sm text-gray-600 line-clamp-2">
                             {message.preview}
                           </p>
                         </div>
