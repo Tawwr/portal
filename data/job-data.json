@@ -1,0 +1,68 @@
+[{
+    "id": "8162",
+    "name": "Lead Software Engineer, Trust & Security",
+    "company": {
+        "id": "81612",
+        "imageUrl": "https://cardea.imgix.net/media/companies/logos/xyjquijsfx8os2kz7skv_jzaJ2qQ?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2",
+        "name": "Gemini",
+        "description": "Gemini is a licensed digital asset exchange and custodian built for both individuals and institutions."
+    },
+    "is_Remote": false,
+    "type": ["Full Time","Part Time"],
+    "experience": ["senior"],
+    "apply_url": "hola.com",
+    "date_posted": "2022-01-15T19:32:39.144Z",
+    "salary_range": {
+        "min": {
+            "value": 40,
+            "currency": "EGP"
+        },
+        "max": {
+            "value": 100,
+            "currency": "EGP"
+        }
+    },
+    "locations": [{
+            "city": "Cairo",
+            "country": "Egypt"
+        }
+    ],
+    "description": "Empower the Individual Through Crypto\nGemini is a crypto exchange and custodian that allows customers to buy, sell, store, and earn more than 30 cryptocurrencies like bitcoin, bitcoin cash, ether, litecoin, and Zcash. Gemini is a New York trust company that is subject to the capital reserve requirements, cybersecurity requirements, and banking compliance standards set forth by the New York State Department of Financial Services and the New York Banking Law. Gemini was founded in 2014 by twin brothers Cameron and Tyler Winklevoss to empower the individual through crypto.\nCrypto is about giving you greater choice, independence, and opportunity. We are here to help you on your journey. We build crypto products that are simple, elegant, and secure. Whether you are an individual or an institution, we want to help you buy, sell, and store your bitcoin and cryptocurrency. Crypto is not just a technology, it's a movement.\nAt Gemini, our mission is to empower the individual and that includes giving our employees flexibility of choice — our Office Optional Policy allows employees to choose to work from one of our physical locations or from home.\nSelect roles that are location-specific will still be eligible for flexible schedules.\nThe Department: Software Engineering\nGemini is regulated and licensed like a bank, but it’s run like a tech startup, and engineering is the core of the company.  There’s a wide range of tough problems to solve at Gemini – from properly securing hundreds of millions of dollars worth of customer funds, to developing innovative new blockchain products, to finding new techniques to combat fraud, to shaving microseconds off our API response times, and everything in between.\nAll of Gemini’s engineers are able to work across the software platform, not just on their own specialization or subteam. We value a thoughtful, collaborative software development process, coupled with a pragmatic approach to problem solving and delivering software.\nThe Role: Lead Software Engineer, Trust & Security\nThe Trust & Security team at Gemini build and maintain secure, reliable, and easy to use authentication & identity features for all of Gemini’s customers, products and services.\nWe intend to deliver a scalable approach to authentication & identity, supporting a variety of services and policy enforcement points. This subject matter expert will provide technical leadership to a diverse team to deliver value to our customers by crafting and building a secure, easy-to-use login experience. This is an incredibly exciting and unique opportunity to take the lead on developing novel security features that are at the core of our mission and touch many components across our platform.\nResponsibilities:\nFunction as a tech lead and take an ownership role for identity's authentication and authorization systems.\nSolve challenging distributed systems problems around scalability, reliability, low latency, high-availability with one of the largest-scale services at Gemini\nBuild APIs to register/authenticate/manage users, groups, and organizations\nParticipate in team code review with fellow engineers, with a keen eye towards correctness, style, and information security concerns\nManage and develop senior team members\nWork with product managers, architects, designers, and engineering managers to establish and communicate a technical vision for Gemini’s login experience\nBe part of a fast-paced team which is constantly working across all areas of the business. Work with stakeholders to understand their security needs and address any defects determined in the process.\nQualifications:\nAt least 4-5 years in software engineering, preferably with a focus in security\nExperience growing and mentoring junior engineers\nExperience with security components such as authentication, authorization, and encryption\nExperience with Scala, Java or another JVM based languages\nExperience with AWS, GCP, Azure or equivalent public cloud infrastructure.\nA great communicator with a knack for precisely and concisely explaining problems and solutions to multiple stakeholders, e.g. senior management, product managers, etc. \nA drive to continuously learning and developing new technologies\nIndependently making decisions quickly based on your domain expertise.\nDemonstrated ability to collaborate as part of a highly distributed team. \nIt Pays to Work Here\nWe take a holistic approach to compensation at Gemini, which includes:\nCompetitive Compensation and Profit-Sharing Equity\nFlexible vacation policy\nRetirement Plan Matching\nGenerous Parental leave\nComprehensive health plans\nTraining and professional development\nAt Gemini, we strive to build diverse teams that reflect the people we want to empower through our products, and we are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity, or Veteran status. Equal Opportunity is the Law, and Gemini is proud to be an equal opportunity workplace and affirmative action employer. If you have a specific need that requires accommodation, please let a member of the People Team know.\n#LI-AH1\n#LI-REMOTE"
+},
+{
+    "id": "8161",
+    "name": "Software Engineer - Platform for Film Industry",
+    "company": {
+        "id": "81612",
+        "imageUrl": "https://cardea.imgix.net/media/companies/logos/rycsyng5xax7h7yiyovr?auto=format&fit=fill&fill=solid&fill-color=white&ixlib=react-9.0.3&h=60&w=60&q=50&dpr=2",
+        "name": "Assemble",
+        "description": "Assemble is like netflix but for cartoons."
+
+    },
+    "is_Remote": true,
+    "type": ["Full Time"],
+    "experience": ["senior"],
+    "apply_url": "hola.com",
+    "date_posted": "2022-06-15T19:32:39.144Z",
+    "salary_range": {
+        "min": {
+            "value": 140,
+            "currency": "EGP"
+        },
+        "max": {
+            "value": 200,
+            "currency": "EGP"
+        }
+    },
+    "locations": [{
+            "city": "Cairo",
+            "country": "Egypt"
+        },
+        {
+            "city": "Dubai",
+            "country": "UAE"
+        }
+    ],
+    "description": "The world has changed. Why hasn’t insurance?\n\nKin’s mission is to reimagine home insurance For Every New Normal. While other insurers struggle to handle a fast-changing world, Kin is built for the future and is prepared to meet its challenges head on while helping our customers do the same.\n\nKin is proud to be one of BuiltIn Chicago’s 2021 and 2022 Best Mid Sized Companies to work for, and Forbes 2021 Best Startup Employers in North America. Simply put, our people are what make us great, and we need forward-thinking, inspired game-changers like you to join us in our mission.\n\nSo, what’s the role?\n\nWe are looking for a creative, hands-on and versatile Product Designer to be a part of our growing design team. As a Product Designer, you'll be involved in a wide range of activities, from conducting customer research and prototyping design concepts to shipping new product features in collaboration with other designers, product managers, and engineers. You will also contribute by assisting on various customer facing marketing initiatives as needed and help maintain our design system to ensure design quality and consistency across our product development efforts.\n\nA day in the life could include:\n\n\n  \nThink holistically about product design from a bird’s eye view and dive into solving problems on the interaction/pixel level with great detail        \nWork cross-functionally with stakeholders in business, product, marketing and technology to understand business goals and customer needs        \nUse an evidence based approach that leverages data and product analytics to inform design decisions        \nDesign product solutions with a focus on human centered design techniques        \nCreate specifications, wireframes, prototypes to communicate design vision        \nUse brand guidelines and visual direction to inform and create high-fidelity mockups        \nDefine UI motion and micro animation guidelines        \nDefine and contribute to the Kin UI design system for mobile and responsive web        \nWork with marketing and content partner to ensure tone and voice in the experience is consistent        \nConduct research and usability testing to valicompany product designs and inform design decisions        \nCollaborate with marketing on customer facing advertising\n         \n\nI’ve got the skills… but do I have the necessary ones?\n\n\n  \nBachelor's degree in HCI, graphic design, cognitive science or equivalent experience        \n2+ years of experience designing products for mobile and responsive web        \nExperience working in a test and learn hypothesis driven product environment preferred        \nExperience creating and contributing to design systems and working with other designers        \nPassion for making complex business tasks easy through user-centered design        \nEmpathy for customers and passion for helping them solve difficult problems        \nSolid communication skills, both written and verbal        \nLearning mindset and willingness to absorb lots of new information and context        \nSelf-starter personality who’s lean and eager to take action        \nExtremely collaborative work style thriving in a dynamic team environment        \nFacilitation and collaboration skills aimed at aligning cross functional peers        \nExperience designing and prototyping with Figma is required        \nPortfolio of your work highlighting your design process and examples of product design\n         \n\nOh, and don’t worry, we’ve got you covered!\n\n\n  \nMedical, Dental and Vision Insurance (including 100% employer-paid plans)        \nFlexible PTO policy        \nVery generous equity options and 401K        \nParental Leave        \nContinuing education and professional development        \nDisability and Life Insurance        \nThe excitement of joining a high-growth Insurtech company and seeing your work make an impact\n         \n\nAbout Kin\n\nIn an industry that hasn't budged in more than 100 years, our technology transforms the user experience, cuts inefficiencies that waste billions of consumer dollars, and customizes coverage homeowners want. We believe insurance was always meant to be a digital product – we’re making that a reality.\n\nOur approach to the industry makes us unique, and the people at Kin help us excel. We’re a team of problem solvers, collaborators, builders, and dreamers who are passionate about creating positive change in the lives of our customers and in our industry. Kin is more than just our name – it’s how we treat each other. That’s one of the many reasons we’ve been recognized as a great place to work by Built In, Forbes, and Fast Company.\n\nEEOC Statement\n\nKin is proud to be an Equal Employment Opportunity and Affirmative Action Employer. We don't just accept difference – we honor it, nurture it, and celebrate it. We don’t discriminate based on race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics."
+}
+]
