@@ -1,0 +1,566 @@
+{
+    "public_identifier": "moustafaelhadary",
+    "profile_pic_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/moustafaelhadary/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20220616%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20220616T151931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8cdd280f88b5cc53392f07ea86dbfa646fe3d5b9ce2ecded421551bca5084355",
+    "background_cover_image_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/moustafaelhadary/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20220616%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20220616T151931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2496ebbe860efca4ce827e26019d1697a9de98a194b795eeed865614a76902d9",
+    "first_name": "Moustafa",
+    "last_name": "Elhadary",
+    "full_name": "Moustafa Elhadary",
+    "occupation": "Senior Digital Analyst at McKinsey & Company",
+    "headline": "Senior Software Engineer at McKinsey & Company",
+    "summary": "I am a Software Engineer with a passion for people and Artificial Intelligence. \n\nOver my 4 years of college, I served as President of the Student Government for 2 years, a Resident Assistant, as well as an active member of various societies . \n\nI led one of the top 10 finalist teams in a university-wide $100,000 Artificial Intelligence challenge. \n\nFor senior design project, we implemented trained and developed a Machine Learning Model to offer a cloud based video surveillance service to detect and predict crime in real-time. We received the first place award for the project",
+    "country": "US",
+    "country_full_name": "United States of America",
+    "city": "Miami-Fort Lauderdale Area",
+    "state": "Pennsylvania",
+    "experiences": [{
+        "starts_at": {
+            "day": 1,
+            "month": 2,
+            "year": 2021
+        },
+        "ends_at": null,
+        "company": "McKinsey & Company",
+        "company_linkedin_profile_url": "https://www.linkedin.com/company/mckinsey/",
+        "title": "Senior Digital Analyst",
+        "description": null,
+        "location": "Miami, Florida, United States",
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C560BAQHi9a-TSArIzg/company-logo_400_400/0/1654056119582?e=1663200000&v=beta&t=oOhINMAFWLNQqVL6JqD2swA6L6rkE7zAUOOnrihIff0"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 7,
+            "year": 2019
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 5,
+            "year": 2020
+        },
+        "company": "MochaWallet",
+        "company_linkedin_profile_url": "https://www.linkedin.com/company/mochawallet/",
+        "title": "Co-Founder",
+        "description": "My responsibilities included managing our engineering team in Erie and Ukraine by working with the team to find solutions to the various problems and challenges that we faced. \n\nDay to day I\u2019d be involved in everything from Software Architecture, CI/CD pipeline, QA, Presentations to clients, Agile Planning, Development and much more.\n\nThe systems we managed did everything from warehousing, international/domestic shipping, accounting and integrations with our vendors and clients.",
+        "location": "Erie, Pennsylvania, United States",
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C560BAQFrZTyqXT2Njg/company-logo_400_400/0/1585009823157?e=1663200000&v=beta&t=mAWO5UXr19oGv5rRFzZJ9gZmJ-UkdhdznGg9M7ic87w"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 2,
+            "year": 2019
+        },
+        "ends_at": {
+            "day": 28,
+            "month": 2,
+            "year": 2021
+        },
+        "company": "Logistics Plus Inc.",
+        "company_linkedin_profile_url": "https://www.linkedin.com/company/logistics-plus/",
+        "title": "Software Engineer Team Lead",
+        "description": "My responsibilities included managing our engineering team in Erie and Ukraine by working with the team to find solutions to the various problems and challenges that we faced. \n\nDay to day I\u2019d be involved in everything from Software Architecture, CI/CD pipeline, QA, Presentations to clients, Agile Planning, Development and much more.\n\nThe systems we managed did everything from warehousing, international/domestic shipping, accounting and integrations with our vendors and clients.",
+        "location": "Erie, Pennsylvania",
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C4D0BAQGnKBUEyudqyg/company-logo_400_400/0/1641583031257?e=1663200000&v=beta&t=hoG0txTgx8dA6pbV-6S_yMI-ofcVwLUREar0K5AxnEI"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 6,
+            "year": 2018
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 12,
+            "year": 2018
+        },
+        "company": "Logistics Plus Inc.",
+        "company_linkedin_profile_url": "https://www.linkedin.com/company/logistics-plus/",
+        "title": "Software Engineering Intern",
+        "description": "I work on the software development team to develop and maintain the software used by LP for the various software solutions we offer. I also work with the global operations team to help grow relationships in the middle east region.",
+        "location": "Erie, Pennsylvania Area",
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C4D0BAQGnKBUEyudqyg/company-logo_400_400/0/1641583031257?e=1663200000&v=beta&t=hoG0txTgx8dA6pbV-6S_yMI-ofcVwLUREar0K5AxnEI"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 5,
+            "year": 2016
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 5,
+            "year": 2018
+        },
+        "company": "Penn State Behrend Student Government Association",
+        "company_linkedin_profile_url": "https://www.linkedin.com/company/psbsga/",
+        "title": "President",
+        "description": "-The Chairperson of the Senate.\n-Responsible for planning, coordinating, and nurturing the organization\u2019s activities. \n-Representative of the students in discussions or negotiations with the administration, faculty, and staff of the College and the University. \n-Co-chair of Student Activity fee and Student Facilities Fee Committee with the Director of Student Affairs of 6 million dollars.\n-A member of the Faculty Council, And I serve on the Student Life Committee of the Faculty Council.\n-Serve as one of the two Penn State Behrend Council Representatives for the Council of Commonwealth Student Governments (CCSG). \n -Serve as an ex officio member of the Council of Fellows and Alumni Society of the College.",
+        "location": "Penn State Behrend",
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C560BAQENdNFhABDXeA/company-logo_400_400/0/1526578623837?e=1663200000&v=beta&t=U38Hz-omssIKuXcS57WudgaTJ7nWKWEZV0wlDUx_m5k"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 10,
+            "year": 2015
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 5,
+            "year": 2016
+        },
+        "company": "Resident Life, Penn State Erie",
+        "company_linkedin_profile_url": null,
+        "title": "Resident Assistant",
+        "description": "\u2022Responsible for providing educational programs and paraprofessional counseling for a residence hall wing of 28 freshmen and upperclassmen students. \n\u2022Conducted rounds throughout the building in order to assure security and enforce University policies.\n\u2022Act as a liaison between residents and Department of Residence Life.\n\u2022Create and implement social and recreational programs that promote self respect and responsibility for community.",
+        "location": "Penn State Behrend",
+        "logo_url": null
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 9,
+            "year": 2015
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 5,
+            "year": 2016
+        },
+        "company": "International Student Organization",
+        "company_linkedin_profile_url": null,
+        "title": "President",
+        "description": "\u2022\tFacilitate meetings for up to 90 members, give announcements and updates.\n\u2022\tFacilitate communication between Executive board members and the general members.\n\u2022\tResponsible for creating and directing ISO events.",
+        "location": "Penn State Behrend",
+        "logo_url": null
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 5,
+            "year": 2013
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 7,
+            "year": 2017
+        },
+        "company": "Mastertrade Import and Export",
+        "company_linkedin_profile_url": null,
+        "title": "Administrative Assistant",
+        "description": "-Facilitated communication between multinational companies.\n-Researched and prepared detailed information about prospective business partners.\n-Developed and maintained the website of the organization.",
+        "location": "Penn State Behrend",
+        "logo_url": null
+    }],
+    "education": [{
+        "starts_at": {
+            "day": 1,
+            "month": 1,
+            "year": 2014
+        },
+        "ends_at": {
+            "day": 30,
+            "month": 6,
+            "year": 2018
+        },
+        "field_of_study": "Computer Software Engineering",
+        "degree_name": "Bachelor's degree",
+        "school": "Penn State Erie, The Behrend College",
+        "school_linkedin_profile_url": null,
+        "description": null,
+        "logo_url": "https://media-exp2.licdn.com/dms/image/C510BAQGqpUq-MtK82A/company-logo_400_400/0/1519874031078?e=1663200000&v=beta&t=6PVntnozIVNy9ihudIw-FLP8i2KO2UNIPmuIzF2xC0A"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 1,
+            "year": 2007
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 12,
+            "year": 2014
+        },
+        "field_of_study": "High School/Secondary Diplomas and Certificates",
+        "degree_name": "high school diploma",
+        "school": "International School of Choueifat",
+        "school_linkedin_profile_url": null,
+        "description": "Activities and Societies: I was part of many clubs and organizations in High school such as Science Fair Team 2011-2012 First place Regional Winners, Sports department head 2012-2013, Primary department head 2013-2014",
+        "logo_url": null
+    }],
+    "languages": ["Arabic", "English", "French"],
+    "accomplishment_organisations": [],
+    "accomplishment_publications": [],
+    "accomplishment_honors_awards": [{
+        "title": "Behrend Excellence Award",
+        "issuer": "Penn State University",
+        "issued_on": {
+            "day": 1,
+            "month": 6,
+            "year": 2017
+        },
+        "description": null
+    }, {
+        "title": "Dr Dwayne Hilton Illumination Award",
+        "issuer": "Penn State University",
+        "issued_on": {
+            "day": 1,
+            "month": 5,
+            "year": 2017
+        },
+        "description": null
+    }, {
+        "title": "Behrend Excellence Award",
+        "issuer": "Penn State University",
+        "issued_on": {
+            "day": 1,
+            "month": 6,
+            "year": 2016
+        },
+        "description": null
+    }],
+    "accomplishment_patents": [],
+    "accomplishment_courses": [{
+        "name": "Communication Networks",
+        "number": "Cmpen 461"
+    }, {
+        "name": "Data Structures and Algorithms",
+        "number": "CMPSC 465"
+    }, {
+        "name": "Database Management Systems",
+        "number": "MIS  336"
+    }, {
+        "name": "Microprocessors",
+        "number": "CMPEN  351"
+    }, {
+        "name": "Software Architecture ",
+        "number": "SWENG 421"
+    }, {
+        "name": "Software Quality",
+        "number": "SWENG 497"
+    }, {
+        "name": "Software Testing",
+        "number": "SWENG 431"
+    }],
+    "accomplishment_projects": [{
+        "starts_at": {
+            "day": 1,
+            "month": 1,
+            "year": 2018
+        },
+        "ends_at": null,
+        "title": "FeelLike",
+        "description": "We were selected among the top 10 finalists from the 70+ teams that applied. Our Idea was pretty simple, we wanted to get users involved with each other while providing a level of anonymity. ",
+        "url": "https://moustafaelhadary.github.io/nittanyAIChallenge/"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 5,
+            "year": 2018
+        },
+        "title": "Cloud based Intelligent Video Surveillance and Predictive Monitoring Platform",
+        "description": "Background: Video Surveillance has become more and more widespread and is being increasingly used in both public and private sectors in a variety of applications - public surveillance, theft detection, natural disasters, fire, vandalism, traffic monitoring etc.\n\nObjective: The objective of this project is to augment Concurrent's Video Platform with cloud based video surveillance capabilities so that Concurrent can offer product(s)/services in this growing Video surveillance market segment.",
+        "url": "https://www.concurrent.com"
+    }, {
+        "starts_at": {
+            "day": 1,
+            "month": 8,
+            "year": 2016
+        },
+        "ends_at": {
+            "day": 31,
+            "month": 12,
+            "year": 2016
+        },
+        "title": "University Food Ordering system, Sonurb",
+        "description": "Worked in a team of 3 to develop a prototype program for university housing and food services that will allow students to order \u2018to go food\u2019 from their phones to increase overall efficiency and decrease waiting times.  We designed the user, kitchen and manager interfaces as well as the database to handle the requests. The final system mainly used MySQL and Java.\n",
+        "url": null
+    }],
+    "accomplishment_test_scores": [],
+    "volunteer_work": [],
+    "certifications": [],
+    "connections": 500,
+    "people_also_viewed": [{
+        "link": "https://www.linkedin.com/in/shihabhassan",
+        "name": "Shihab Hassan",
+        "summary": "Senior Tax Performance Engineer at BDO",
+        "location": "United States"
+    }, {
+        "link": "https://www.linkedin.com/in/simon-gedzul-6b92b41b1",
+        "name": "Simon Gedzul",
+        "summary": "Student at Penn State Erie, The Behrend College",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/constantinus-van-der-wegen-a06564130",
+        "name": "Constantinus van der Wegen",
+        "summary": "Research Student at Radboudumc",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/erica-asel-ab194a19b",
+        "name": "Erica Asel",
+        "summary": "Open to internships",
+        "location": "Erie-Meadville Area"
+    }, {
+        "link": "https://www.linkedin.com/in/bryant-niederriter",
+        "name": "Bryant Niederriter",
+        "summary": "Student at Penn State University",
+        "location": "Oil City, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/olivia-harris1",
+        "name": "Olivia Harris",
+        "summary": "Marketing Alum at Penn State Erie, The Behrend College",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/ekaterina-kate-brovina-1b4231181",
+        "name": "Ekaterina (Kate) Brovina",
+        "summary": "Financial Planning Analyst at Goldman Sachs",
+        "location": "United States"
+    }, {
+        "link": "https://www.linkedin.com/in/ashley-jankowski-40a04315a",
+        "name": "Ashley Jankowski",
+        "summary": "Lean Leadership Development Associate at Parker Hannifin",
+        "location": "United States"
+    }, {
+        "link": "https://www.linkedin.com/in/hannah-carlino-b71110114",
+        "name": "Hannah Carlino",
+        "summary": "Financial Analyst II at Thermo Fisher Scientific",
+        "location": "Greater Pittsburgh Region"
+    }, {
+        "link": "https://www.linkedin.com/in/nate-steis-5a7197128",
+        "name": "Nate Steis",
+        "summary": "Graduate Assistant at the Edinboro University of Pennsylvania",
+        "location": "Erie-Meadville Area"
+    }, {
+        "link": "https://www.linkedin.com/in/jessica-boscaljon-546634197",
+        "name": "Jessica Boscaljon",
+        "summary": "MIS student at Penn State Erie, The Behrend College",
+        "location": "Erie-Meadville Area"
+    }, {
+        "link": "https://www.linkedin.com/in/aaron-goss-83b375206",
+        "name": "Aaron Goss",
+        "summary": "Student at Penn State University",
+        "location": "Middletown, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/alison-bastian-cpa-44516a127",
+        "name": "Alison Bastian, CPA",
+        "summary": "Assurance Staff at EY",
+        "location": "Pittsburgh, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/%%E6%%81%%A9%%E5%%8D%%9A-%%E6%%9D%%A8-a67b57a2",
+        "name": "\u6768\u6069\u535a",
+        "summary": "penn state - \u5b66\u751f",
+        "location": "Middletown, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/robert-cruz-b3624a1a3",
+        "name": "Robert Cruz",
+        "summary": "Student at Penn State University",
+        "location": "Middletown, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/maria-czerwinski",
+        "name": "Maria Czerwinski-Hagerty",
+        "summary": "Human Resources Administrator at Logistics Plus Inc.",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/kayla-mcewen-50474b112",
+        "name": "Kayla McEwen",
+        "summary": "Web Content Specialist at Scully and Scully",
+        "location": "New York City Metropolitan Area"
+    }, {
+        "link": "https://www.linkedin.com/in/yash-navdiya",
+        "name": "Yash Navdiya",
+        "summary": "Engineering, Scientific, and Technical Intern (ESTI) at Pennsylvania Department of Transportation (PennDOT)",
+        "location": "Bridgeville, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/jun-hyeok-980b36174",
+        "name": "Jun Hyeok",
+        "summary": "Student at Penn State University",
+        "location": "Greater Harrisburg Area"
+    }, {
+        "link": "https://www.linkedin.com/in/almicia",
+        "name": "Almicia Dunson",
+        "summary": "Software Engineer Lead at Microsoft",
+        "location": "Dallas-Fort Worth Metroplex"
+    }, {
+        "link": "https://www.linkedin.com/in/sol-caruso-639522ab",
+        "name": "Sol Caruso",
+        "summary": "Cluster Lead for America\u2019s Purchasing  at McKinsey & Company",
+        "location": "Fort Lauderdale, FL"
+    }, {
+        "link": "https://www.linkedin.com/in/djrusso",
+        "name": "Daniel Russo",
+        "summary": "Senior Software Engineer",
+        "location": "Kissimmee, FL"
+    }, {
+        "link": "https://www.linkedin.com/in/mark-mcgrath-9b809586",
+        "name": "Mark McGrath",
+        "summary": "Director Emeritus at McKinsey and Company",
+        "location": "Delray Beach, FL"
+    }, {
+        "link": "https://www.linkedin.com/in/matt-keller-sweng",
+        "name": "Matt Keller",
+        "summary": "Software Engineer at FreedomPay",
+        "location": "Exton, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/louis-d-angelo-b2942582",
+        "name": "Louis D'Angelo",
+        "summary": "Software Engineer at Amazon",
+        "location": "Seattle, WA"
+    }, {
+        "link": "https://www.linkedin.com/in/hadi-hassan-",
+        "name": "Hadi Hassan",
+        "summary": "Demand Planner, Google powered by Logistics Plus",
+        "location": "United States"
+    }, {
+        "link": "https://www.linkedin.com/in/hadikhezam",
+        "name": "Hadi Khezam",
+        "summary": "Graduate student at Drexel University, School of Mechanical Engineering",
+        "location": "Philadelphia, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/hussain-hadi-42baaa77",
+        "name": "Hussain Hadi",
+        "summary": "Student at Gannon University",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/erric-difilippo-74b466227",
+        "name": "Erric DiFilippo",
+        "summary": "Hardware Engineer at PSNERGY",
+        "location": "Erie, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/washu-calc-pltl-34072a236",
+        "name": "WashU Calc PLTL",
+        "summary": "Program at Washington University in St. Louis",
+        "location": "St Louis, MO"
+    }, {
+        "link": "https://www.linkedin.com/in/sophiaburdell",
+        "name": "Sophia Burdell",
+        "summary": "Solution Design Analyst at Fortna",
+        "location": "Atlanta, GA"
+    }, {
+        "link": "https://www.linkedin.com/in/adrion-orange",
+        "name": "Adrion Orange",
+        "summary": "Automation Engineer at Bayer",
+        "location": "New Bethlehem, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/thomas-fournier-588ab52b",
+        "name": "Thomas Fournier",
+        "summary": "Full Stack .Net Developer",
+        "location": "Ephrata, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/garrett-clark-00aaa861",
+        "name": "Garrett Clark",
+        "summary": "Senior Cloud Technologist at Oracle",
+        "location": "Ponte Vedra Beach, FL"
+    }, {
+        "link": "https://www.linkedin.com/in/kimberly-willingham-67469b19",
+        "name": "Kimberly Willingham",
+        "summary": "Brokerage",
+        "location": "Addison, AL"
+    }, {
+        "link": "https://www.linkedin.com/in/tom-jennings-erie",
+        "name": "Tom Jennings",
+        "summary": "IT Service Management Lead at K&L Gates; founder & race director of trail ultra Oil Creek 100 Trail Runs (oc100.org)",
+        "location": "Pittsburgh, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/hadi-wijaya-258044b",
+        "name": "Hadi Wijaya",
+        "summary": "Assistant Manager at prudential",
+        "location": "West Mifflin, PA"
+    }, {
+        "link": "https://www.linkedin.com/in/hangulu",
+        "name": "Hakeem Angulu",
+        "summary": "Software Engineer at Google",
+        "location": "Brooklyn, NY"
+    }, {
+        "link": "https://www.linkedin.com/in/amitesh-srivastava-b5b740105",
+        "name": "Amitesh Srivastava",
+        "summary": "Software Engineer at Microsoft",
+        "location": "Greater Seattle Area"
+    }, {
+        "link": "https://www.linkedin.com/in/leila-hassan",
+        "name": "Leila Hassan",
+        "summary": "Co-founder & COO at Tawwr",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/stephanie-donnelly-a893b925",
+        "name": "Stephanie Donnelly",
+        "summary": "Professional Development Manager at McKinsey & Company",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/shrey-arora-",
+        "name": "Shrey Arora",
+        "summary": "Software Development Engineer at Amazon",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/mostafa-el-hadary-8a687a15",
+        "name": "Mostafa El-Hadary",
+        "summary": "Head Of Technical Services at Credit Agricole Egypt",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/islam-sayed-ibrahim",
+        "name": "Islam Sayed",
+        "summary": "Front End Web Developer",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/sohiybsakaji",
+        "name": "Sohiyb Sakaji",
+        "summary": "Chief Business Development Officer & HR Catalyst at SAP SuccessFactors | Take charge of change with the Human Experience Management (HXM) Suite.",
+        "location": null
+    }, {
+        "link": "https://www.linkedin.com/in/drewtrappgoldstein",
+        "name": "Drew Goldstein",
+        "summary": "Founder DE&I Solutions Group and Associate Partner at McKinsey & Company",
+        "location": null
+    }],
+    "recommendations": [],
+    "activities": [{
+        "title": "What does it mean to be a 21st Century Logistics Company? International operations and air freight specialists, like Megan, who manage your shipments\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }, {
+        "title": "On May 9th, 2021 I proudly graduated from the Penn State College of the Liberal Arts with a Bachelor of Arts in Political Science and a minor in\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }, {
+        "title": "Meet Katie Chess, a recent graduate of the Penn State Behrend Black School of Business. She graduated in Spring 2019 with two degrees in Accounting\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }, {
+        "title": "Back in 2018 at WeWork Hammersmith when I was introduced to Hacker News and the essays of Paul Graham, I knew I stumbled upon a gold mine! Never in\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }, {
+        "title": "Another great realization by team TPG Africa! TPGGreat partnership with one of North Africa's leading education platforms, serving 16,000 students\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }, {
+        "title": "I\u2019m so excited to announce that, after a quick change of plans, I will be attending West Chester University in the fall. I will be pursuing my MSW\u2026",
+        "link": "https://www.linkedin.com/signup/cold-join",
+        "activity_status": "Liked by Moustafa Elhadary"
+    }],
+    "similarly_named_profiles": [{
+        "name": "Moustafa Elhadary",
+        "link": "https://www.linkedin.com/in/moustafa-elhadary-9819771ba",
+        "summary": "Student at California State Polytechnic University-Pomona",
+        "location": "Azusa, CA"
+    }, {
+        "name": "Moustafa Elhadary",
+        "link": "https://www.linkedin.com/in/moustafa-elhadary-24665810",
+        "summary": "Owner, Olympic Service Station",
+        "location": "Azusa, CA"
+    }],
+    "articles": [],
+    "groups": [],
+    "extra": {
+        "github_profile_id": null,
+        "twitter_profile_id": "twitter.com/mtgtuts",
+        "facebook_profile_id": null
+    },
+    "skills": ["c#", "c++", "coding", "communication", "customer service", "event planning", "java", "leadership", "management", "microsoft excel", "microsoft office", "microsoft powerpoint", "microsoft word", "powerpoint", "presidency", "project management", "public speaking", "research", "sales", "social media", "social networking", "strategic planning", "team leadership", "teamwork", "time management"],
+    "inferred_salary": {
+        "min": 100000.0,
+        "max": 85000.0
+    },
+    "gender": "male",
+    "birth_date": null,
+    "industry": "computer software",
+    "interests": [],
+    "personal_numbers": [],
+    "personal_emails": []
+}
