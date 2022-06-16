@@ -1,16 +1,15 @@
 import { ListBox } from 'components/listbox'
-import PhotoUpload from 'components/shared/photoUpload'
-import { useFormik } from 'formik'
-import { websiteValidation } from 'lib'
+
+
 import React from 'react'
-import * as Yup from 'yup'
+
 import TTextInput from '../shared/textInput'
 
 interface Props {
-    handleSteps: (value: number) => void
+    formik: any
 }
 
-const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
+const JobStepOne: React.FC<Props> = ({formik}) => {
     const jobOptions = [
         {
             id: 1,
@@ -36,54 +35,13 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
         },
     ]
 
-    const initialValues = {
-        companyDetails: '',
-        companyEmail: '',
-        minSalary: '',
-        website: '',
-        linkedIn: '',
-        maxSalary: '',
-        apply_url: '',
-        roleTitle: '',
-        description: '',
-        companyName: '',
-        companyAvatarURL: '',
-    }
-
-    const formik = useFormik({
-        initialValues,
-        validationSchema: Yup.object({
-            roleTitle: Yup.string()
-                .min(15, 'Must be 15 characters or more')
-                .required('Required'),
-            minSalary: Yup.number().typeError("Please Insert a vaild Number"),
-            maxSalary: Yup.number().typeError("Please Insert a vaild Number"),
-            companyName: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('Required'),
-            companyDetails: Yup.string()
-                .max(250, 'Must be 250 characters or less')
-                .required('Required'),
-            description: Yup.string()
-                .max(500, 'Must be 500 characters or less')
-                .required('Required'),
-            companyEmail: Yup.string().email('Invalid email address').required('Required'),
-            apply_url: Yup.string()
-                .required('Required'),
-            website: websiteValidation,
-            linkedIn: websiteValidation,
-        }),
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
-            handleSteps(2)
-        },
-    })
-
-    function errorMessage(key: keyof typeof initialValues) {
+    
+    function errorMessage(key: string) {
         return Boolean(formik.touched[key]) && Boolean(formik.errors[key])
             ? formik.errors[key]
             : undefined
     }
+    
     return (
         <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
             <h1 className='text-4xl m-auto d-block text-center uppercase font-bold mb-20'>New Job</h1>
