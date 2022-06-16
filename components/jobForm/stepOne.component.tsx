@@ -40,7 +40,7 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
         firstName: '',
         companyDetails: '',
         companyEmail: '',
-        password: '',
+        salaryRange: '',
         website: '',
         linkedIn: '',
         github: '',
@@ -91,6 +91,7 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                 onBlur={formik.handleBlur}
                 value={formik.values.companyAvatarURL}
                 setFieldValue={(url) => formik.setFieldValue('companyAvatarURL', url)}
+                label="Company Avatar"
             />
             <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                 <div className="mt-1 col-span-3">
@@ -105,6 +106,7 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.roleTitle}
+                        required
                     />
                 </div>
                 <div className="col-span-3">
@@ -119,25 +121,12 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.companyName}
+                        required
                     />
                 </div>
             </div>
             <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
-                <div className="col-span-3">
-                    <TTextInput
-                        type="text"
-                        id="companyDetails"
-                        autoComplete="companyDetails"
-                        placeholder="Details About your company"
-                        required
-                        title="Company Details"
-                        name="companyDetails"
-                        error={errorMessage('companyDetails')}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.companyDetails}
-                    />
-                </div>
+
                 <div className="col-span-3">
                     <TTextInput
                         type="text"
@@ -150,11 +139,10 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.apply_url}
+                        required
                     />
                 </div>
-            </div>
-            <div>
-                <div className="mt-1">
+                <div className="col-span-3">
                     <TTextInput
                         id="companyEmail"
                         name="companyEmail"
@@ -170,8 +158,44 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                     />
                 </div>
             </div>
+            <div className="col-span-3">
+                <TTextInput
+                    type="text"
+                    id="companyDetails"
+                    autoComplete="companyDetails"
+                    placeholder="Details About your company"
+                    required
+                    title="Company Details"
+                    name="companyDetails"
+                    error={errorMessage('companyDetails')}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.companyDetails}
+                    isTextArea={true}
+                />
+            </div>
             <ListBox options={jobOptions} label="Job Type" />
-            <ListBox options={currency} label="Currency" />
+            <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
+                <div className="mt-1 col-span-3">
+                    <ListBox options={currency} label="Currency" />
+                </div>
+                <div className="mt-1 col-span-3">
+                    <TTextInput
+                        type="text"
+                        name="salaryRange"
+                        id="salaryRange"
+                        placeholder="$2500 - $5000"
+                        autoComplete="salaryRange"
+                        title="Salary Range"
+                        required
+                        error={errorMessage('salaryRange')}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.salaryRange}
+                    />
+                </div>
+
+            </div>
             <div>
                 <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                     <div className="col-span-3">
@@ -244,6 +268,7 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.description}
+                        required
                     />
                 </div>
             </div>
