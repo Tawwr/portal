@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         sky: colors.sky,
         teal: colors.teal,
+        cyan: colors.cyan,
       },
       gridTemplateRows: {
         '[auto,auto,1fr]': 'auto auto 1fr',
@@ -20,5 +21,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

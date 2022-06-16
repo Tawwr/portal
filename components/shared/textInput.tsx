@@ -2,11 +2,7 @@ import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import React from 'react';
 
-interface props
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+type baseProps = {
   large?: boolean
   enableClear?: boolean
   passwordShow?: boolean
@@ -14,9 +10,22 @@ interface props
   error?: string
   isTextArea?: boolean
 }
+
+type textAreaProps = React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> &
+  baseProps
+
+type textInputProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> &
+  baseProps
+
 function TTextInput({
   error,
-  isTextArea,
+  isTextArea = false,
   name,
   required,
   title,
@@ -25,9 +34,9 @@ function TTextInput({
   passwordShow = false,
   canClearValue = false,
   ...props
-}: props) {
+}: textInputProps | textAreaProps) {
   return (
-    <div>
+    <>
       <div className="flex justify-between">
         <label
           htmlFor={title}
@@ -35,7 +44,7 @@ function TTextInput({
         >
           {title}
         </label>
-        {required === false && (
+        {!required && (
           <span className="text-sm text-gray-500" id={name + '-optional'}>
             Optional
           </span>
@@ -45,19 +54,18 @@ function TTextInput({
       <div className="relative mt-1 rounded-md shadow-sm">
         {isTextArea ? (
           <textarea
+            {...(props as textAreaProps)}
             rows={6}
-            id={props.id}
             className={classNames(
               'block w-full rounded-md sm:text-sm',
               error
                 ? 'border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500'
                 : 'block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm'
             )}
-            defaultValue={''}
           />
         ) : (
           <input
-            {...props}
+            {...(props as textInputProps)}
             className={classNames(
               'block w-full rounded-md',
               large ? 'text-md py-4' : 'sm:text-sm',
@@ -75,7 +83,7 @@ function TTextInput({
             />
           </div>
         )}
-        {canClearValue && props.value && !error && (
+        {canClearValue && !error && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             <XIcon className="h-5 w-5 text-black" aria-hidden="true" />
           </div>
@@ -86,7 +94,7 @@ function TTextInput({
           &nbsp; {error}
         </p>
       )}
-    </div>
+    </>
   )
 }
 

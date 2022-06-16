@@ -56,7 +56,7 @@ export default function SignUp() {
                   <p className="mt-6 text-sm text-gray-600">
                     Already Have An Account ?{' '}
                     <Link href="/signin">
-                      <a className="text-md font-bold  text-blue-400  hover:text-black">
+                      <a className="text-md font-bold  text-black  hover:text-gray-700">
                         Log in
                       </a>
                     </Link>
@@ -79,13 +79,13 @@ export default function SignUp() {
               <h3 className="mb-4 text-2xl font-bold text-slate-700">
                 Apply to join the Tawwr Talent Portal!
               </h3>
-              <p className="text-sm">
+              <p className="">
                 The Tawwr Talent Portal is a group of professionals open to new
                 opportunities. The portal is designed to help you when
                 you&apos;re searching and leave you be when you&apos;re not.
                 Once accepted you can expect:
               </p>
-              <ul className="my-6 ml-6 list-disc">
+              <ul className="my-6 ml-6">
                 <li>
                   Curated introduction requests from hiring companies vetted by
                   Tawwr
@@ -99,11 +99,11 @@ export default function SignUp() {
                   fulfilled on your terms
                 </li>
               </ul>
-              <span>
+              <p>
                 Fill out the form to apply. You can expect a response within a
                 couple of days. Once accepted, you&apos;ll only be messaged when
                 a company is requesting to speak with you.
-              </span>
+              </p>
             </div>
           </div>
         </div>
