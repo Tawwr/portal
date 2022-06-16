@@ -1,6 +1,7 @@
 import { Menu, Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { classNames } from 'lib'
+import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { Fragment } from 'react'
 
@@ -35,6 +36,31 @@ type props = {
 export default function Layout({ children, pageKey, needsAuth = true }: props) {
   return (
     <>
+      <NextSeo
+        title={"Tawwr Hiring Portal - "+ pageKey}
+        description="Hire the best, fast."
+        canonical="https://tawwr-portal.vercel.app/"
+        openGraph={{
+          url: 'https://tawwr-portal.vercel.app/',
+          title: 'Tawwr Hiring Portal',
+          description: 'Hire the best, fast.',
+          images: [
+            {
+              url: '/og.png',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+          ],
+          site_name: 'tawwr.com',
+        }}
+        twitter={{
+          handle: '@joinTawwr',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <div className="flex min-h-screen flex-col">
         <header className="sticky top-0 z-50 bg-white shadow">
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
