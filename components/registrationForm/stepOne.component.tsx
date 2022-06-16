@@ -78,6 +78,7 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
         onBlur={formik.handleBlur}
         value={formik.values.avatarURL}
         setFieldValue={(url) => formik.setFieldValue('avatarURL', url)}
+        label="Avatar Photo"
       />
       <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
         <div className="col-span-3">
