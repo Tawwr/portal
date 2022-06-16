@@ -37,18 +37,15 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
     ]
 
     const initialValues = {
-        firstName: '',
         companyDetails: '',
         companyEmail: '',
-        salaryRange: '',
+        minSalary: '',
         website: '',
         linkedIn: '',
-        github: '',
+        maxSalary: '',
         apply_url: '',
         roleTitle: '',
         description: '',
-        startDate: '',
-        endDate: '',
         companyName: '',
         companyAvatarURL: '',
     }
@@ -56,19 +53,25 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
     const formik = useFormik({
         initialValues,
         validationSchema: Yup.object({
-            firstName: Yup.string()
+            roleTitle: Yup.string()
+                .min(15, 'Must be 15 characters or more')
+                .required('Required'),
+            minSalary: Yup.number().typeError("Please Insert a vaild Number"),
+            maxSalary: Yup.number().typeError("Please Insert a vaild Number"),
+            companyName: Yup.string()
                 .max(15, 'Must be 15 characters or less')
                 .required('Required'),
-            lastName: Yup.string()
-                .max(20, 'Must be 20 characters or less')
+            companyDetails: Yup.string()
+                .max(250, 'Must be 250 characters or less')
                 .required('Required'),
-            email: Yup.string().email('Invalid email address').required('Required'),
-            password: Yup.string()
-                .required('Required')
-                .min(8, 'Must be 8 characters or more'),
+            description: Yup.string()
+                .max(500, 'Must be 500 characters or less')
+                .required('Required'),
+            companyEmail: Yup.string().email('Invalid email address').required('Required'),
+            apply_url: Yup.string()
+                .required('Required'),
             website: websiteValidation,
             linkedIn: websiteValidation,
-            github: websiteValidation,
         }),
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2))
@@ -83,8 +86,8 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
     }
     return (
         <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
-            <h1 className='text-4xl m-auto d-block text-center uppercase font-bold'>New Job</h1>
-            <PhotoUpload
+            <h1 className='text-4xl m-auto d-block text-center uppercase font-bold mb-20'>New Job</h1>
+            {/* <PhotoUpload
                 id="companyAvatarURL"
                 name="companyAvatarURL"
                 onChange={formik.handleChange}
@@ -92,7 +95,7 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                 value={formik.values.companyAvatarURL}
                 setFieldValue={(url) => formik.setFieldValue('companyAvatarURL', url)}
                 label="Company Avatar"
-            />
+            /> */}
             <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                 <div className="mt-1 col-span-3">
                     <TTextInput
@@ -175,23 +178,36 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
                 />
             </div>
             <ListBox options={jobOptions} label="Job Type" />
+            <ListBox options={currency} label="Currency" />
             <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
                 <div className="mt-1 col-span-3">
-                    <ListBox options={currency} label="Currency" />
+                    <TTextInput
+                        type="text"
+                        name="minSalary"
+                        id="minSalary"
+                        placeholder="$2500"
+                        autoComplete="minSalary"
+                        title="Min Salary"
+                        required
+                        error={errorMessage('minSalary')}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.minSalary}
+                    />
                 </div>
                 <div className="mt-1 col-span-3">
                     <TTextInput
                         type="text"
-                        name="salaryRange"
-                        id="salaryRange"
-                        placeholder="$2500 - $5000"
-                        autoComplete="salaryRange"
-                        title="Salary Range"
+                        name="maxSalary"
+                        id="maxSalary"
+                        placeholder="$5000"
+                        autoComplete="maxSalary"
+                        title="Max Salary"
                         required
-                        error={errorMessage('salaryRange')}
+                        error={errorMessage('maxSalary')}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.salaryRange}
+                        value={formik.values.maxSalary}
                     />
                 </div>
 
@@ -237,15 +253,15 @@ const JobStepOne: React.FC<Props> = ({ handleSteps }) => {
             <div className="relative flex items-start">
                 <div className="flex h-5 items-center">
                     <input
-                        id="checkFirstJob"
-                        aria-describedby="checkFirstJob-description"
-                        name="checkFirstJob"
+                        id="checkIsRemoteJob"
+                        aria-describedby="checkIsRemoteJob-description"
+                        name="checkIsRemoteJob"
                         type="checkbox"
                         className="h-4 w-4 rounded border-gray-300 text-black focus:ring-black"
                     />
                 </div>
                 <div className="ml-3 text-sm">
-                    <label htmlFor="checkFirstJob" className="font-medium text-gray-700">
+                    <label htmlFor="checkIsRemoteJob" className="font-medium text-gray-700">
                         Remote Job ?
                     </label>
                 </div>
