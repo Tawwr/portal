@@ -1,6 +1,6 @@
 import MultiCheckBox from 'components/shared/multiCheckBox'
 import React from 'react'
-import { ListBox } from '../listbox'
+import { ListBox } from '../xlistbox'
 import { useForm } from 'react-hook-form'
 import TTextInput from 'components/shared/textInput'
 
