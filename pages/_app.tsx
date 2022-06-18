@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import store from 'store'
 import 'styles/globals.scss'
 import { SWRConfig } from 'swr'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
@@ -24,7 +25,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           fetcher,
         }}
       >
-        <InstantSearch searchClient={searchClient} indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_ID || ""}>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_ID || ''}
+        >
           <Component {...pageProps} />
         </InstantSearch>
       </SWRConfig>

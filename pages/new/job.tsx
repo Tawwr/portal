@@ -5,19 +5,41 @@ import JobStepOne from 'components/jobForm/stepOne.component'
 import { websiteValidation } from 'lib'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { classNames } from 'lib/index'
 
 type Props = {}
 
 const RightComponent = ({ values }: any) => {
   return (
-    <div>
-      <span>{values.companyName ?? 'Company Name'}</span>
-      <h3>{values.companyEmail ?? 'Company Email'}</h3>
-      <h1>{values.jobRole ?? 'Job Role'}</h1>
-      <p>{values.location ?? 'Location'}</p>
-      <p>{values.jobType ?? 'Job Type'}</p>
-      <p>{values.experience ?? 'Experience Level'}</p>
-      <p>{values.currency ?? 'Currency'}</p>
+    <div
+      className={classNames(
+        'flex flex-col items-start gap-5',
+        values.companyName.length > 0 || values.roleTitle.length > 0
+          ? 'text-black'
+          : 'text-gray-600'
+      )}
+    >
+      <span>
+        <i className="fa-solid fa-camera"></i>{' '}
+        {values.companyName.length > 0 ? values.companyName : 'Company Name'}
+      </span>
+      <h3>
+        <i className="fa-solid fa-envelope"></i>{' '}
+        {values.companyEmail.length > 0 ? values.companyEmail : 'Company Email'}
+      </h3>
+      <h1>
+        <i className="fa-solid fa-suitcase"></i>{' '}
+        {values.roleTitle.length > 0 ? values.roleTitle : 'Role Title'}
+      </h1>
+      <p>
+        <i className="fa-solid fa-location-dot"></i>{' '}
+        {values.location ?? 'Location'}
+      </p>
+      <p>
+        <i className="fa-solid fa-business-time"></i>{' '}
+        {values.jobType.name ?? 'Job Type'} -{' '}
+        {values.experience ?? 'Experience Level'}
+      </p>
     </div>
   )
 }
@@ -48,6 +70,7 @@ const NewJob = (props: Props) => {
     description: '',
     companyName: '',
     companyAvatarURL: '',
+    jobType: jobOptions[0],
   }
 
   const formik = useFormik({
