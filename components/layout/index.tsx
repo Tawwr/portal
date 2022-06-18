@@ -10,26 +10,25 @@ const user = {
   email: 'moustafa@tawwr.com',
   imageUrl: '/Avatar.jpeg',
 }
-const navigation = [
-  { name: 'Dashboard', href: '/' },
+const navigation = [{ name: 'Dashboard', href: '/' }] as const
+
+const invisiblePages = [
   { name: 'Detail', href: '/' },
-  { name: 'Profile', href: '/profile' },
-  { name: 'Settings', href: '/settings' },
   { name: 'SignUp', href: '/signup' },
   { name: 'SignIn', href: '/signin' },
 ] as const
+
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
   { name: 'Sign out', href: '#' },
 ] as const
 
-export type NavKey = typeof navigation[number]['name']
-export type UserNavKey = typeof userNavigation[number]['name']
-
 type props = {
   children: React.ReactNode
-  pageKey: NavKey
+  pageKey: typeof navigation[number]['name'] &
+    typeof userNavigation[number]['name'] &
+    typeof invisiblePages[number]['name']
   needsAuth?: boolean
 }
 

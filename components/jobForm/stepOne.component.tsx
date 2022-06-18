@@ -1,6 +1,6 @@
-import { ListBox } from 'components/xlistbox'
-import { MultiSelect } from 'components/shared/xMultiSelect'
 
+import Dropdown from 'components/shared/dropdown'
+import MultiSelect from 'components/shared/multiSelect'
 import React, { Dispatch, SetStateAction } from 'react'
 
 import TTextInput from '../shared/textInput'
@@ -20,14 +20,12 @@ const JobStepOne: React.FC<Props> = ({
 }) => {
   const currency = [
     {
-      id: 1,
-      name: 'EGP',
-      avatar: '🇪🇬',
+      id: 'EGP',
+      name: '🇪🇬 EGP',
     },
     {
-      id: 2,
-      name: 'USD',
-      avatar: '🇺🇸',
+      id: 'USD',
+      name: '🇺🇸 USD',
     },
   ]
 
@@ -121,13 +119,13 @@ const JobStepOne: React.FC<Props> = ({
       </div>
       <MultiSelect
         options={jobOptions}
-        selectedPeople={selectedPeople}
-        setSelectedPeople={setSelectedPeople}
+        // selectedPeople={selectedPeople}
+        // setSelectedPeople={setSelectedPeople}
         label="Job Type"
       />
       <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-5">
         <div className="col-span-1 mt-1">
-          <ListBox options={currency} label="Currency" />
+          <Dropdown options={currency} label="Currency" />
         </div>
         <div className="col-span-2 mt-1">
           <TTextInput

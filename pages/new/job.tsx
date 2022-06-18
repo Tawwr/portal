@@ -1,13 +1,12 @@
 import Layout from 'components/layout'
-import TwoSidedWrapper from 'components/twoSidedWrapper'
 import React, { useState } from 'react'
 import JobStepOne from 'components/jobForm/stepOne.component'
 import { websiteValidation } from 'lib'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { classNames } from 'lib/index'
+import TwoSidedWrapper from 'components/layout/twoSidedWrapper'
 
-type Props = {}
 
 const RightComponent = ({ values }: any) => {
   return (
@@ -44,7 +43,7 @@ const RightComponent = ({ values }: any) => {
   )
 }
 
-const NewJob = (props: Props) => {
+const NewJob = () => {
   const jobOptions = [
     {
       id: 1,
@@ -77,10 +76,9 @@ const NewJob = (props: Props) => {
     initialValues,
     validationSchema: Yup.object({
       roleTitle: Yup.string()
-        .min(15, 'Must be 15 characters or more')
         .required('Required'),
-      minSalary: Yup.number().typeError('Please Insert a vaild Number'),
-      maxSalary: Yup.number().typeError('Please Insert a vaild Number'),
+      minSalary: Yup.number().typeError('Please Insert a valid Number'),
+      maxSalary: Yup.number().typeError('Please Insert a valid Number'),
       companyName: Yup.string()
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
