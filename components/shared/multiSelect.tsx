@@ -5,16 +5,22 @@ import { useState } from 'react'
 import { optionType } from 'types'
 import Pill from './pill'
 
-export default function MyCombobox({
+export default function MultiSelect({
   options,
+  defaultOptions,
   label = '',
   placeholder = '',
+  noBorder = false,
+  limitCount,
 }: {
   options: optionType[]
+  defaultOptions?: optionType[]
   label?: string
   placeholder?: string
+  noBorder?: boolean
+  limitCount?: number
 }) {
-  const [selectedOptions, setSelectedOptions] = useState<typeof options>([])
+  const [selectedOptions, setSelectedOptions] = useState<optionType[]>(defaultOptions || [])
   const [query, setQuery] = useState('')
 
   const filteredOptions =
@@ -37,7 +43,10 @@ export default function MyCombobox({
       multiple
     >
       <>
-        {selectedOptions.length > 0 &&
+        <Combobox.Label className="block text-sm font-medium text-gray-700 mb-2">
+        {label}
+      </Combobox.Label>
+      {selectedOptions.length > 0 &&
           selectedOptions.map((option) => (
             <Pill
               key={option.id}
@@ -47,13 +56,13 @@ export default function MyCombobox({
             />
           ))}
       </>
-      <Combobox.Label className="block text-sm font-medium text-gray-700">
-        {label}
-      </Combobox.Label>
       <div className="relative mt-1">
         <Combobox.Input
           placeholder={placeholder}
-          className="w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm"
+          className={classNames(
+            noBorder ? '' : 'border',
+            'w-full rounded-md border-gray-300 bg-white py-2 pl-3 pr-10 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm'
+          )}
           onChange={(event) => setQuery(event.target.value)}
           //   displayValue={(option: typeof options[number]) => option?.name}
         />
@@ -67,6 +76,9 @@ export default function MyCombobox({
               <Combobox.Option
                 key={option.id}
                 value={option}
+                disabled={
+                  limitCount ? selectedOptions.length >= limitCount : false
+                }
                 className={({ active }) =>
                   classNames(
                     'relative cursor-default select-none py-2 pl-3 pr-9',
@@ -77,11 +89,13 @@ export default function MyCombobox({
                 {({ active, selected }) => (
                   <>
                     <div className="flex items-center">
-                      <img
-                        src={option.imageUrl}
-                        alt=""
-                        className="h-6 w-6 flex-shrink-0 rounded-full"
-                      />
+                      {option.avatar && (
+                        <img
+                          src={option.avatar}
+                          alt=""
+                          className="h-6 w-6 flex-shrink-0 rounded-full"
+                        />
+                      )}
                       <span
                         className={classNames(
                           'ml-3 truncate',
