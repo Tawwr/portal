@@ -2,17 +2,22 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
-import { Fragment, useState } from 'react'
+import { Dispatch, Fragment, SetStateAction, useState } from 'react'
 
 interface Props {
   options: any[]
   label: string
+  selectedPeople: any[]
+  setSelectedPeople: Dispatch<SetStateAction<any[]>>
 }
-export const ListBox: React.FC<Props> = ({ options, label }) => {
-  const [selected, setSelected] = useState(options[0])
-
+export const MultiSelect: React.FC<Props> = ({
+  options,
+  label,
+  selectedPeople,
+  setSelectedPeople,
+}) => {
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selectedPeople} onChange={setSelectedPeople} multiple>
       {({ open }) => (
         <>
           <Listbox.Label className="block text-sm font-medium text-gray-700">
@@ -21,8 +26,10 @@ export const ListBox: React.FC<Props> = ({ options, label }) => {
           <div className="relative mt-1">
             <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm">
               <span className="flex items-center">
-                {selected.avatar}
-                <span className="ml-3 block truncate">{selected.name}</span>
+                {selectedPeople.map((person) => person.avatar).join(', ')}
+                <span className="ml-3 block truncate">
+                  {selectedPeople.map((person) => person.name).join(', ')}
+                </span>
               </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                 <SelectorIcon

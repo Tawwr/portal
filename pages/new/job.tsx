@@ -1,6 +1,6 @@
 import Layout from 'components/layout'
 import TwoSidedWrapper from 'components/twoSidedWrapper'
-import React from 'react'
+import React, { useState } from 'react'
 import JobStepOne from 'components/jobForm/stepOne.component'
 import { websiteValidation } from 'lib'
 import { useFormik } from 'formik'
@@ -23,6 +23,19 @@ const RightComponent = ({ values }: any) => {
 }
 
 const NewJob = (props: Props) => {
+  const jobOptions = [
+    {
+      id: 1,
+      name: 'Full Time',
+      avatar: '👩‍💻',
+    },
+    {
+      id: 2,
+      name: 'Part Time',
+      avatar: '👨‍💻',
+    },
+  ]
+  const [selectedPeople, setSelectedPeople] = useState([jobOptions[0]])
   const initialValues = {
     companyDetails: '',
     companyEmail: '',
@@ -69,7 +82,14 @@ const NewJob = (props: Props) => {
   return (
     <Layout pageKey="SignUp" needsAuth={false}>
       <TwoSidedWrapper
-        LeftComponent={<JobStepOne formik={formik} />}
+        LeftComponent={
+          <JobStepOne
+            formik={formik}
+            selectedPeople={selectedPeople}
+            setSelectedPeople={setSelectedPeople}
+            jobOptions={jobOptions}
+          />
+        }
         RightComponent={<RightComponent values={formik.values} />}
         imageURL={
           'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHB5cmFtaWRzfGVufDB8fDB8fA%3D%3D'

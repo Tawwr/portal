@@ -1,26 +1,23 @@
 import { ListBox } from 'components/listbox'
+import { MultiSelect } from 'components/shared/MultiSelect'
 
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
 import TTextInput from '../shared/textInput'
 
 interface Props {
   formik: any
+  selectedPeople: any[]
+  setSelectedPeople: Dispatch<SetStateAction<any[]>>
+  jobOptions: any[]
 }
 
-const JobStepOne: React.FC<Props> = ({ formik }) => {
-  const jobOptions = [
-    {
-      id: 1,
-      name: 'Full Time',
-      avatar: '👩‍💻',
-    },
-    {
-      id: 2,
-      name: 'Part Time',
-      avatar: '👨‍💻',
-    },
-  ]
+const JobStepOne: React.FC<Props> = ({
+  formik,
+  selectedPeople,
+  setSelectedPeople,
+  jobOptions,
+}) => {
   const currency = [
     {
       id: 1,
@@ -122,7 +119,12 @@ const JobStepOne: React.FC<Props> = ({ formik }) => {
           isTextArea={true}
         />
       </div>
-      <ListBox options={jobOptions} label="Job Type" />
+      <MultiSelect
+        options={jobOptions}
+        selectedPeople={selectedPeople}
+        setSelectedPeople={setSelectedPeople}
+        label="Job Type"
+      />
       <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-5">
         <div className="col-span-1 mt-1">
           <ListBox options={currency} label="Currency" />
