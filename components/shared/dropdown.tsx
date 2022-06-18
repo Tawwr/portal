@@ -3,12 +3,13 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import { Fragment, useState } from 'react'
+import { optionType } from 'types'
 
 interface Props {
-  options: any[],
-  label:string,
+  options: optionType[]
+  label?: string
 }
-export const ListBox:React.FC<Props> = ({ options, label }) => {
+const Dropdown: React.FC<Props> = ({ options, label = true }) => {
   const [selected, setSelected] = useState(options[0])
 
   return (
@@ -54,7 +55,7 @@ export const ListBox:React.FC<Props> = ({ options, label }) => {
                     {({ selected, active }) => (
                       <>
                         <div className="flex items-center">
-                        {option.avatar}
+                          {option.avatar}
                           <span
                             className={classNames(
                               selected ? 'font-semibold' : 'font-normal',
@@ -87,3 +88,5 @@ export const ListBox:React.FC<Props> = ({ options, label }) => {
     </Listbox>
   )
 }
+
+export default Dropdown

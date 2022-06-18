@@ -37,3 +37,11 @@ export interface DummyJob extends BaseHit  {
   locations: DummyLocation[]
   description: string
 }
+
+
+export interface optionType {
+  id: number | string
+  name: string
+  avatar?: string
+  [key: string]: any
+}

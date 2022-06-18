@@ -1,8 +1,8 @@
-import MultiCheckBox from 'components/shared/multiCheckBox'
 import React from 'react'
-import { ListBox } from '../listbox'
+import  Dropdown  from '../shared/dropdown'
 import { useForm } from 'react-hook-form'
 import TTextInput from 'components/shared/textInput'
+import MultiSelect from 'components/shared/multiSelect'
 
 interface Props {
   handleSteps: (value: number) => void
@@ -67,7 +67,7 @@ const StepTwo: React.FC<Props> = ({ handleSteps }) => {
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <hr className="mb-5" />
-      <ListBox options={options} label="Where are you at in your job search?" />
+      <Dropdown options={options} label="Where are you at in your job search?" />
       <div>
         <label
           htmlFor="comment"
@@ -91,7 +91,7 @@ const StepTwo: React.FC<Props> = ({ handleSteps }) => {
         {infoInputs.map((item) => (
           <div key={item.id}>
             <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
-            <MultiCheckBox options={item.options} label={item.label} />
+            <MultiSelect options={item.options} label={item.label} />
           </div>
         ))}
         <div className="relative flex items-start">
@@ -117,7 +117,7 @@ const StepTwo: React.FC<Props> = ({ handleSteps }) => {
             including methods of compensation
           </p>
           <div className="mb-10 flex flex-row gap-5">
-            <MultiCheckBox options={chooseOptions} />
+            <MultiSelect options={chooseOptions} />
             <TTextInput
               type="number"
               name="salary"

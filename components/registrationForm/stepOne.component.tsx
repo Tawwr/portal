@@ -1,4 +1,4 @@
-import { ListBox } from 'components/listbox'
+import  Dropdown  from 'components/shared/dropdown'
 import PhotoUpload from 'components/shared/photoUpload'
 import { useFormik } from 'formik'
 import { websiteValidation } from 'lib'
@@ -129,7 +129,7 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
           />
         </div>
       </div>
-      <ListBox options={genderOptions} label="Gender" />
+      <Dropdown options={genderOptions} label="Gender" />
       <div>
         <div className="mt-1">
           <TTextInput
