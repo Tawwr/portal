@@ -37,7 +37,7 @@ export default function Layout({ children, pageKey, needsAuth = true }: props) {
   return (
     <>
       <NextSeo
-        title={"Tawwr Hiring Portal - "+ pageKey}
+        title={'Tawwr Hiring Portal - ' + pageKey}
         description="Hire the best, fast."
         canonical="https://tawwr-portal.vercel.app/"
         openGraph={{
