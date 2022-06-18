@@ -6,7 +6,6 @@ export default function Dashboard() {
   return (
     <Layout pageKey="Dashboard">
       <div className="min-h-full bg-gray-100">
-
         <HomeHeader />
         <div className="py-10">
           <div className="mx-auto max-w-3xl px-6 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-8 lg:px-8">

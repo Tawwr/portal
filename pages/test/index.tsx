@@ -1,69 +1,58 @@
 import Layout from 'components/layout'
-import StepOne from 'components/registrationForm/stepOne.component'
-import StepTwo from 'components/registrationForm/stepTwo.component'
+import MultiSelect from 'components/shared/multiSelect'
+import TTextInput from 'components/shared/textInput'
 import TwoSidedWrapper from 'components/layout/twoSidedWrapper'
-import Link from 'next/link'
-import { useState } from 'react'
+import React from 'react'
 
 export default function SignUp() {
-  const [step, setStep] = useState(2)
-
-  const handleSteps = (value: number) => {
-    setStep(value)
-  }
-  const displayTitle = () => {
-    switch (step) {
-      case 1:
-        return 'Create Your Profile'
-      case 2:
-        return 'What are you looking for ?'
-      default:
-        return ''
-    }
-  }
-  const displaySubTitle = () => {
-    switch (step) {
-      case 1:
-        return 'Filling out all the information below helps your profile stand out!'
-      case 2:
-        return 'Set your preferences for your next role to help companies find you.'
-      default:
-        return ''
-    }
-  }
-  const displayStep = () => {
-    switch (step) {
-      case 1:
-        return <StepOne handleSteps={handleSteps} />
-      case 2:
-        return <StepTwo handleSteps={handleSteps} />
-      default:
-        return <StepOne handleSteps={handleSteps} />
-    }
-  }
-
+  const options = [
+    {
+      id: 1,
+      name: 'Leslie Alexander',
+      imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      desc: 'Leslie Alexander is a software engineer at Tawwr.',
+    },
+    {
+      id: 2,
+      name: 'Leslie ',
+      imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+    {
+      id: 3,
+      name: ' Alexander',
+      imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+    // More users...
+  ]
   function LeftComponent() {
     return (
       <>
         <div>
           <h2 className="mt-4 mb-2 text-4xl font-extrabold text-gray-900">
-            {displayTitle()}
+            Hello World
           </h2>
-          <span className="text-gray-400">{displaySubTitle()}</span>
-          {step === 1 && (
-            <p className="mt-6 text-sm text-gray-600">
-              Already Have An Account?{' '}
-              <Link href="/signin">
-                <a className="text-md font-bold  text-black  hover:text-gray-700">
-                  Log in
-                </a>
-              </Link>
-            </p>
-          )}
+          <span className="text-gray-400">Hello Two</span>
         </div>
 
         <div className="mt-8">
-          <div className="mt-6">{displayStep()}</div>
+          <div>
+            <div className="my-10 flex flex-col gap-5">
+              <div>
+                <MultiSelect options={options} />
+              </div>
+            </div>
+            <div className="flex w-full flex-row items-center justify-end gap-5">
+              <button
+                type="submit"
+                className="text-md flex w-[35%] justify-center rounded-md border border-transparent border-black bg-black py-3 px-4 font-medium  tracking-wide text-white shadow-sm hover:border-2 hover:bg-transparent hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              >
+                Submit Application
+              </button>
+            </div>
+          </div>
         </div>
       </>
     )

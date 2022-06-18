@@ -1,4 +1,4 @@
-import { ListBox } from 'components/xlistbox'
+import Dropdown from 'components/shared/dropdown'
 import PhotoUpload from 'components/shared/photoUpload'
 import { useFormik } from 'formik'
 import { websiteValidation } from 'lib'
@@ -13,14 +13,12 @@ interface Props {
 const StepOne: React.FC<Props> = ({ handleSteps }) => {
   const genderOptions = [
     {
-      id: 1,
-      name: 'Male',
-      avatar: '🤷🏽‍♂️',
+      id: 'male',
+      name: '🤷🏽‍♂️ Male',
     },
     {
-      id: 2,
-      name: 'Female',
-      avatar: '💃🏽',
+      id: 'female',
+      name: '💃🏽 Female',
     },
   ]
 
@@ -112,7 +110,7 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
           />
         </div>
       </div>
-
+      <Dropdown options={genderOptions} label="Gender" />
       <div>
         <div className="mt-1">
           <TTextInput
@@ -130,7 +128,6 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
           />
         </div>
       </div>
-      <ListBox options={genderOptions} label="Gender" />
       <div>
         <div className="mt-1">
           <TTextInput
