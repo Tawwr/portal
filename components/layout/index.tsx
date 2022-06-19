@@ -24,11 +24,14 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ] as const
 
+export type PageKeyType =
+  | typeof navigation[number]['name']
+  | typeof invisiblePages[number]['name']
+  | typeof userNavigation[number]['name']
+
 type props = {
   children: React.ReactNode
-  pageKey: typeof navigation[number]['name'] &
-    typeof userNavigation[number]['name'] &
-    typeof invisiblePages[number]['name']
+  pageKey: PageKeyType
   needsAuth?: boolean
 }
 

@@ -1,42 +1,27 @@
+import JobForm from 'components/jobPostingPage/jobForm'
 import Layout from 'components/layout'
-import React, { useState } from 'react'
-import JobStepOne from 'components/jobForm/stepOne.component'
-import { websiteValidation } from 'lib'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import { classNames } from 'lib/index'
 import TwoSidedWrapper from 'components/layout/twoSidedWrapper'
+import { FormikProps, useFormik } from 'formik'
+import { websiteValidation } from 'lib'
+import { classNames } from 'lib/index'
+import React from 'react'
+import { NewJobPost } from 'types'
+import * as Yup from 'yup'
 
-
-const RightComponent = ({ values }: any) => {
+const RightComponent = ({ values }: { values: NewJobPost }) => {
   return (
-    <div
-      className={classNames(
-        'flex flex-col items-start gap-5',
-        values.companyName.length > 0 || values.roleTitle.length > 0
-          ? 'text-black'
-          : 'text-gray-600'
-      )}
-    >
-      <span>
-        <i className="fa-solid fa-camera"></i>{' '}
-        {values.companyName.length > 0 ? values.companyName : 'Company Name'}
-      </span>
-      <h3>
-        <i className="fa-solid fa-envelope"></i>{' '}
-        {values.companyEmail.length > 0 ? values.companyEmail : 'Company Email'}
-      </h3>
+    <div className={classNames('flex flex-col items-start gap-5')}>
       <h1>
-        <i className="fa-solid fa-suitcase"></i>{' '}
-        {values.roleTitle.length > 0 ? values.roleTitle : 'Role Title'}
+        <i className="fa-solid fa-suitcase"></i>
+        {values.jobTitle.length > 0 ? values.jobTitle : 'Role Title'}
       </h1>
       <p>
-        <i className="fa-solid fa-location-dot"></i>{' '}
+        <i className="fa-solid fa-location-dot"></i>
         {values.location ?? 'Location'}
       </p>
       <p>
-        <i className="fa-solid fa-business-time"></i>{' '}
-        {values.jobType.name ?? 'Job Type'} -{' '}
+        <i className="fa-solid fa-business-time"></i>
+        {values.jobType?.name ?? 'Job Type'} -{' '}
         {values.experience ?? 'Experience Level'}
       </p>
     </div>
@@ -44,39 +29,24 @@ const RightComponent = ({ values }: any) => {
 }
 
 const NewJob = () => {
-  const jobOptions = [
-    {
-      id: 1,
-      name: 'Full Time',
-      avatar: '👩‍💻',
-    },
-    {
-      id: 2,
-      name: 'Part Time',
-      avatar: '👨‍💻',
-    },
-  ]
-  const [selectedPeople, setSelectedPeople] = useState([jobOptions[0]])
-  const initialValues = {
-    companyDetails: '',
-    companyEmail: '',
+  const initialValues: NewJobPost = {
     minSalary: '',
     website: '',
     linkedIn: '',
     maxSalary: '',
     apply_url: '',
-    roleTitle: '',
+    jobTitle: '',
     description: '',
-    companyName: '',
-    companyAvatarURL: '',
-    jobType: jobOptions[0],
+    company: undefined,
+    location: '',
+    experience: [],
+    jobType: undefined,
   }
 
-  const formik = useFormik({
+  const formik: FormikProps<NewJobPost> = useFormik({
     initialValues,
     validationSchema: Yup.object({
-      roleTitle: Yup.string()
-        .required('Required'),
+      jobTitle: Yup.string().required('Required'),
       minSalary: Yup.number().typeError('Please Insert a valid Number'),
       maxSalary: Yup.number().typeError('Please Insert a valid Number'),
       companyName: Yup.string()
@@ -103,14 +73,7 @@ const NewJob = () => {
   return (
     <Layout pageKey="SignUp" needsAuth={false}>
       <TwoSidedWrapper
-        LeftComponent={
-          <JobStepOne
-            formik={formik}
-            selectedPeople={selectedPeople}
-            setSelectedPeople={setSelectedPeople}
-            jobOptions={jobOptions}
-          />
-        }
+        LeftComponent={<JobForm formik={formik} />}
         RightComponent={<RightComponent values={formik.values} />}
         imageURL={
           'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHB5cmFtaWRzfGVufDB8fDB8fA%3D%3D'

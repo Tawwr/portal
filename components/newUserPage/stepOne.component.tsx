@@ -62,11 +62,6 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
     },
   })
 
-  function errorMessage(key: keyof typeof initialValues) {
-    return Boolean(formik.touched[key]) && Boolean(formik.errors[key])
-      ? formik.errors[key]
-      : undefined
-  }
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
       <PhotoUpload
@@ -81,32 +76,21 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       <div className="grid justify-between gap-y-6 gap-x-4 sm:grid-cols-6">
         <div className="col-span-3">
           <TTextInput
-            type="text"
-            id="firstName"
-            autoComplete="true"
+            formik={formik}
+            formikKey="firstName"
             placeholder="James"
             title="First Name"
-            name="firstName"
-            error={errorMessage('firstName')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.firstName}
+            required
           />
         </div>
 
         <div className="col-span-3">
           <TTextInput
-            type="text"
-            id="lastName"
-            autoComplete="lastName"
+            formik={formik}
+            formikKey="lastName"
             placeholder="Bond"
-            required
             title="Last Name"
-            name="lastName"
-            error={errorMessage('lastName')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.lastName}
+            required
           />
         </div>
       </div>
@@ -114,16 +98,11 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       <div>
         <div className="mt-1">
           <TTextInput
-            id="email"
-            name="email"
+            formik={formik}
+            formikKey="email"
             type="email"
-            autoComplete="email"
             placeholder="James.Bond@gmail.com"
             title="Email Address"
-            error={errorMessage('email')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
             required
           />
         </div>
@@ -131,15 +110,11 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       <div>
         <div className="mt-1">
           <TTextInput
-            id="password"
-            name="password"
+            formik={formik}
+            formikKey="password"
             type="password"
-            autoComplete="password"
             title="Password"
-            error={errorMessage('password')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
+            autoComplete="password"
             required
           />
         </div>
@@ -149,17 +124,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
           <div className="col-span-3">
             <div className="mt-1">
               <TTextInput
-                type="text"
-                name="website"
-                id="Website"
-                placeholder="https://me.com"
-                autoComplete="website"
+                formik={formik}
+                formikKey="website"
+                placeholder="www.me.com"
                 title="Website"
-                required={false}
-                error={errorMessage('website')}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.website}
               />
             </div>
           </div>
@@ -167,16 +135,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
           <div className="col-span-3">
             <div className="mt-1">
               <TTextInput
-                type="text"
-                name="linkedIn"
-                id="linkedIn"
-                placeholder="linkedin.com/in/me"
+                formik={formik}
+                formikKey="linkedIn"
+                placeholder="https://linkedin.com/in/me"
                 title="LinkedIn"
-                required={false}
-                error={errorMessage('linkedIn')}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.linkedIn}
               />
             </div>
           </div>
@@ -184,16 +146,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       </div>
       <div className="mt-1">
         <TTextInput
-          type="text"
-          name="github"
-          id="github"
+          formik={formik}
+          formikKey="github"
           placeholder="https://github.com/me"
-          title="Github"
-          required={false}
-          error={errorMessage('github')}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.github}
+          title="github"
         />
       </div>
       <hr />
@@ -216,31 +172,19 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       </div>
       <div className="mt-1">
         <TTextInput
-          type="text"
-          name="companyName"
-          id="companyName"
-          autoComplete="job-role"
+          formik={formik}
+          formikKey="companyName"
           placeholder="Enter company name"
           title="Current or most recent employer"
-          error={errorMessage('companyName')}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.companyName}
         />
       </div>
       <div className="col-span-3">
         <div className="mt-1">
           <TTextInput
-            type="text"
-            name="jobTitle"
-            id="jobTitle"
-            autoComplete="job-role"
+            formik={formik}
+            formikKey="jobTitle"
             placeholder="Product Designer"
             title="Job Title"
-            error={errorMessage('jobTitle')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.jobTitle}
           />
         </div>
       </div>
@@ -248,16 +192,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
         <div className="col-span-3">
           <div className="mt-1">
             <TTextInput
-              type="text"
-              name="startDate"
-              id="startDate"
-              autoComplete="start-date"
+              formik={formik}
+              formikKey="startDate"
               placeholder="MM/YYYY"
               title="Start Date"
-              error={errorMessage('startDate')}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.startDate}
             />
           </div>
         </div>
@@ -265,16 +203,10 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
         <div className="col-span-3 grid gap-2">
           <div className="mt-1">
             <TTextInput
-              type="text"
-              name="endDate"
-              id="endDate"
-              autoComplete="end-date"
+              formik={formik}
+              formikKey="endDate"
               placeholder="MM/YYYY"
               title="End Date"
-              error={errorMessage('endDate')}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.endDate}
             />
           </div>
           <div className="relative flex items-start">
@@ -303,29 +235,21 @@ const StepOne: React.FC<Props> = ({ handleSteps }) => {
       <div className="col-span-3">
         <div className="mt-1">
           <TTextInput
-            type="text"
-            name="profileTitle"
-            id="profileTitle"
+            formik={formik}
+            formikKey="profileTitle"
             placeholder="Freelancer Product Designer"
             title="Candidate profile title"
-            error={errorMessage('profileTitle')}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.profileTitle}
           />
         </div>
       </div>
       <div>
         <div className="mt-1">
           <TTextInput
-            id="bio"
-            name="bio"
+            formik={formik}
+            formikKey="bio"
             title="Tell us about yourself"
-            error={errorMessage('bio')}
             isTextArea={true}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.bio}
+            required
           />
         </div>
       </div>
