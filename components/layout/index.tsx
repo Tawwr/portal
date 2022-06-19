@@ -19,7 +19,7 @@ const invisiblePages = [
 ] as const
 
 const userNavigation = [
-  { name: 'Your Profile', href: '/profile' },
+  { name: 'My Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
   { name: 'Sign out', href: '#' },
 ] as const

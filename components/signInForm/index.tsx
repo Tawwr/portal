@@ -1,6 +1,5 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import styles from './style.module.scss'
 
 interface Props {}
 
@@ -31,8 +30,6 @@ const SignInForm: React.FC<Props> = () => {
         </label>
         {/* TODO: replace with correct input */}
         <div
-          className={styles[`input_wrapper`]}
-          id={styles[`${errors.email ? 'error' : undefined}`]}
           data-error={errors.email?.message}
         >
           <input
@@ -60,8 +57,6 @@ const SignInForm: React.FC<Props> = () => {
         </label>
         {/* TODO: replace with correct input */}
         <div
-          className={styles[`input_wrapper`]}
-          id={styles[`${errors.email ? 'error' : undefined}`]}
           data-error={errors.password?.message}
         >
           <input

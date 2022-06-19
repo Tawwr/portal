@@ -64,7 +64,7 @@ export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <Layout pageKey="Profile">
+    <Layout pageKey="My Profile">
       <div className="flex h-full">
         <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <div className="lg:hidden">
