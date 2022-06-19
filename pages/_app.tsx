@@ -24,7 +24,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           fetcher,
         }}
       >
-        <InstantSearch searchClient={searchClient} indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_ID || ""}>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_ID || ''}
+        >
           <Component {...pageProps} />
         </InstantSearch>
       </SWRConfig>

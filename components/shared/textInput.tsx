@@ -1,30 +1,33 @@
 import { ExclamationCircleIcon, XIcon } from '@heroicons/react/solid'
+import { FormikProps } from 'formik'
 import { classNames } from 'lib'
 import React from 'react'
 
-type baseProps = {
+type baseProps<T> = {
   large?: boolean
   enableClear?: boolean
   passwordShow?: boolean
   canClearValue?: boolean
-  error?: string
+  error?: string | string[]
   isTextArea?: boolean
+  formik?: FormikProps<T>
+  formikKey?: keyof T
 }
 
-type textAreaProps = React.DetailedHTMLProps<
+type textAreaProps<T> = React.DetailedHTMLProps<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
   HTMLTextAreaElement
 > &
-  baseProps
+  baseProps<T>
 
-type textInputProps = React.DetailedHTMLProps<
+type textInputProps<T> = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 > &
-  baseProps
+  baseProps<T>
 
-function TTextInput({
-  error,
+function TTextInput<T>({
+  error: errorProp,
   isTextArea = false,
   name,
   required,
@@ -33,8 +36,28 @@ function TTextInput({
   enableClear = false,
   passwordShow = false,
   canClearValue = false,
+  formik,
+  formikKey,
   ...props
-}: textInputProps | textAreaProps) {
+}: textInputProps<T> | textAreaProps<T>) {
+  const error =
+    errorProp ||
+    (formik &&
+    formikKey &&
+    Boolean(formik.touched[formikKey]) &&
+    Boolean(formik.errors[formikKey])
+      ? formik.errors[formikKey]
+      : undefined)
+
+  const value =
+    formik &&
+    formikKey &&
+    (formik.values[formikKey] as unknown as
+      | string
+      | ReadonlyArray<string>
+      | number
+      | undefined)
+
   return (
     <>
       <div className="flex justify-between">
@@ -54,8 +77,13 @@ function TTextInput({
       <div className="relative mt-1 rounded-md shadow-sm">
         {isTextArea ? (
           <textarea
-            {...(props as textAreaProps)}
+            name={formikKey as string}
+            id={formikKey as string}
+            onChange={formik?.handleChange}
+            onBlur={formik?.handleBlur}
+            value={value}
             rows={6}
+            {...(props as textAreaProps<T>)}
             className={classNames(
               'block w-full rounded-md sm:text-sm',
               error
@@ -65,7 +93,13 @@ function TTextInput({
           />
         ) : (
           <input
-            {...(props as textInputProps)}
+          type={(props as textInputProps<T>).type || 'text'}
+            name={formikKey as string}
+            id={formikKey as string}
+            onChange={formik?.handleChange}
+            onBlur={formik?.handleBlur}
+            value={value}
+            {...(props as textInputProps<T>)}
             className={classNames(
               'block w-full rounded-md',
               large ? 'text-md py-4' : 'sm:text-sm',
@@ -91,7 +125,7 @@ function TTextInput({
       </div>
       {error && (
         <p className="text-sm text-red-600" id={name + '-error'}>
-          &nbsp; {error}
+          &nbsp; {error.toString()}
         </p>
       )}
     </>

@@ -7,9 +7,10 @@ interface props
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  setFieldValue: (value: string) => void
+  setFieldValue: (value: string) => void,
+  label:string
 }
-function PhotoUpload({ setFieldValue, ...props }: props) {
+function PhotoUpload({ setFieldValue, label, ...props }: props) {
   const [imageURL, setImageURL] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -39,7 +40,7 @@ function PhotoUpload({ setFieldValue, ...props }: props) {
     <>
       <div className="mt-6 flex-grow lg:mt-0 ">
         <p className="text-sm font-medium text-gray-700" aria-hidden="true">
-          Upload Photo
+          {label}
         </p>
         <div className="mt-1 lg:hidden">
           <div className="flex items-center">

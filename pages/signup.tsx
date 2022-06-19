@@ -1,6 +1,6 @@
 import Layout from 'components/layout'
-import StepOne from 'components/registrationForm/stepOne.component'
-import StepTwo from 'components/registrationForm/stepTwo.component'
+import StepOne from 'components/newUserPage/stepOne.component'
+import StepTwo from 'components/newUserPage/stepTwo.component'
 import TwoSidedWrapper from 'components/layout/twoSidedWrapper'
 import Link from 'next/link'
 import { useState } from 'react'

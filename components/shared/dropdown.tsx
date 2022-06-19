@@ -2,22 +2,22 @@ import { Combobox } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import { useState } from 'react'
-import { optionType } from 'types'
+import { ListOptionType } from 'types'
 
 export default function Dropdown({
   options,
   label = '',
-  placeholder = '',
+  placeholder = 'Select one',
   noBorder = false,
   defaultOption,
 }: {
-  options: optionType[]
-  defaultOption?: optionType
+  options: ListOptionType[]
+  defaultOption?: ListOptionType
   label?: string
   placeholder?: string
   noBorder?: boolean
 }) {
-  const [selectedOption, setSelectedOption] = useState<optionType | undefined>(
+  const [selectedOption, setSelectedOption] = useState<ListOptionType | undefined>(
     defaultOption
   )
   const [query, setQuery] = useState('')

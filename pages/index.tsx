@@ -1,5 +1,5 @@
-import HomeHeader from 'components/jobList/homeHeader'
-import SearchResults from 'components/jobList/searchList'
+import HomeHeader from 'components/jobListPage/homeHeader'
+import SearchResults from 'components/jobListPage/searchList'
 import Layout from 'components/layout'
 
 export default function Dashboard() {

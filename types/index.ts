@@ -39,9 +39,30 @@ export interface DummyJob extends BaseHit  {
 }
 
 
-export interface optionType {
+export interface ListOptionType {
   id: number | string
   name: string
   avatar?: string
   [key: string]: any
+}
+
+export interface DummyCompany {
+  id: string
+  name: string
+  imageUrl: string
+  description: string
+
+}
+export interface NewJobPost {
+  minSalary: string;
+  website: string;
+  linkedIn: string;
+  maxSalary: string;
+  apply_url: string;
+  jobTitle: string;
+  description: string;
+  location:string;
+  company?: DummyCompany;
+  experience: string[];
+  jobType?: ListOptionType
 }

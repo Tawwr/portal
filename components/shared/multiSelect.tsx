@@ -2,7 +2,7 @@ import { Combobox } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { classNames } from 'lib'
 import { useState } from 'react'
-import { optionType } from 'types'
+import { ListOptionType } from 'types'
 import Pill from './pill'
 
 export default function MultiSelect({
@@ -13,14 +13,14 @@ export default function MultiSelect({
   noBorder = false,
   limitCount,
 }: {
-  options: optionType[]
-  defaultOptions?: optionType[]
+  options: ListOptionType[]
+  defaultOptions?: ListOptionType[]
   label?: string
   placeholder?: string
   noBorder?: boolean
   limitCount?: number
 }) {
-  const [selectedOptions, setSelectedOptions] = useState<optionType[]>(defaultOptions || [])
+  const [selectedOptions, setSelectedOptions] = useState<ListOptionType[]>(defaultOptions || [])
   const [query, setQuery] = useState('')
 
   const filteredOptions =
