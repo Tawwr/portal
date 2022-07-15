@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#fff" />
+        {/* <meta name="theme-color" content="#9196A1" /> */}
       </Head>
       <Provider store={store}>
         <SWRConfig

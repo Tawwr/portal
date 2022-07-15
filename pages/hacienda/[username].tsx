@@ -51,7 +51,7 @@ export default function Example() {
                       aria-hidden="true"
                     />
                   </div>
-                  <div className="relative min-h-[92vh] transform overflow-hidden rounded-xl bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                  <div className="relative min-h-[94vh] transform overflow-hidden rounded-xl bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                     <div>
                       <div className="relative mb-20 flex justify-end">
                         <img
@@ -82,7 +82,7 @@ export default function Example() {
                       <div className="mt-4 flex items-end justify-between">
                         <div className="flex flex-col">
                           <span>Owner: Moustafa Elhadary</span>
-                          <span>Unit: HBWV-CAB-831</span>
+                          <span>Unit: HBWV-CAB-835</span>
                         </div>
                         <img
                           src="/Avatar.jpeg"
