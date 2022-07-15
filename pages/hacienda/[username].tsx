@@ -165,8 +165,8 @@ export default function Example() {
                       <QRCode value={CODE} className="mx-auto justify-center" />
                       <div className="mt-4 flex items-end justify-between">
                         <div className="flex flex-col">
-                          <span>Owner: {formik.values.name || 'John Doe'}</span>
-                          <span>
+                          <span className='text-lg font-medium'>Owner: {formik.values.name || 'John Doe'}</span>
+                          <span className='text-lg font-medium'>
                             Unit: {formik.values.unit || 'HBWV-CAB-123'}
                           </span>
                         </div>
