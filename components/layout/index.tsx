@@ -21,7 +21,8 @@ const invisiblePages = [
 const userNavigation = [
   { name: 'My Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign out', href: '' },
+  { name: 'Pass', href: '/hacienda/moustafa' },
 ] as const
 
 export type PageKeyType =
